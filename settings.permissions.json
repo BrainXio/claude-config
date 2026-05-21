@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Read(~/.claude)",
-      "Write(~/.claude)"
+      "Write(~/.claude)",
+      "Read(./.claude)",
+      "Read(~/.config/claude)"
     ],
     "deny": [
       "Read(**/.env*)",

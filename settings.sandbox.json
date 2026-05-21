@@ -1,9 +1,9 @@
 {
   "sandbox": {
-    "enabled": false,
+    "enabled": true,
     "failIfUnavailable": true,
     "autoAllowBashIfSandboxed": true,
-    "allowUnsandboxedCommands": true,
+    "allowUnsandboxedCommands": false,
     "excludedCommands": [
       "ssh",
       "gpg",
