@@ -14,6 +14,7 @@
 !settings.ui.json
 !settings.attribution.json
 !settings.local.json
+!settings.core.json
 !.mcp.json
 !.mdformat.toml
 !.yamllint
