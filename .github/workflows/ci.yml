@@ -6,10 +6,10 @@ on:
 
 jobs:
   docs:
-    uses: brainxio/.github/workflows/doc-quality.yml@v1
+    uses: BrainXio/.github/workflows/doc-quality.yml@v1
     with:
       md-paths: "."
       yaml-paths: ".github"
 
   starter:
-    uses: brainxio/.github/workflows/starter-checks.yml@v1
+    uses: BrainXio/.github/workflows/starter-checks.yml@v1

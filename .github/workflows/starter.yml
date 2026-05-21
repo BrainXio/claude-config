@@ -6,4 +6,4 @@ on:
 
 jobs:
   starter:
-    uses: brainxio/.github/workflows/starter-checks.yml@v1
+    uses: BrainXio/.github/workflows/starter-checks.yml@v1
