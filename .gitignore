@@ -3,22 +3,26 @@
 
 # Allowlist: only config files
 !.gitignore
+!.githooks/
+!.githooks/**
+!.github/
+!.github/**
+!.mdformat.toml
+!.mcp.json
+!.yamllint
 !README.md
 !settings.json
 !settings.env.json
 !settings.env-ollama.json
+!settings.attribution.json
+!settings.core.json
 !settings.hooks.json
+!settings.local.json
+!settings.model.json
 !settings.permissions.json
 !settings.sandbox.json
 !settings.statusline.json
-!settings.model.json
 !settings.ui.json
-!settings.attribution.json
-!settings.local.json
-!settings.core.json
-!.mcp.json
-!.mdformat.toml
-!.yamllint
 !agents/
 !agents/**
 !docs/
@@ -27,7 +31,3 @@
 !rules/**
 !skills/
 !skills/**
-!.github/
-!.github/**
-!.githooks/
-!.githooks/**
