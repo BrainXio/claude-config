@@ -1,0 +1,9 @@
+name: Starter Checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  starter:
+    uses: brainxio/.github/workflows/starter-checks.yml@v1

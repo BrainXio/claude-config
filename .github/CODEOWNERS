@@ -1,0 +1,9 @@
+# Default owners for everything in the repo
+* @brainxio/core
+
+# Workflow changes require review
+/.github/workflows/ @brainxio/core
+
+# Rules and agent changes require review
+/rules/ @brainxio/core
+/agents/ @brainxio/core
