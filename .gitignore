@@ -5,9 +5,8 @@
 !.gitignore
 !settings.json
 !settings.claude.json
-!settings.claude-sandbox.json
+!settings.sandbox.json
 !settings.ollama.json
-!settings.ollama-sandbox.json
 !settings.local.json
 !.mcp.json
 !.mdformat.toml

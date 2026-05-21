@@ -1,0 +1,57 @@
+{
+  "sandbox": {
+    "enabled": false,
+    "failIfUnavailable": true,
+    "autoAllowBashIfSandboxed": true,
+    "allowUnsandboxedCommands": true,
+    "excludedCommands": [
+      "ssh",
+      "gpg",
+      "gpg2",
+      "sudo",
+      "su",
+      "pkexec",
+      "doas"
+    ],
+    "filesystem": {
+      "allowRead": [
+        ".",
+        "~/.claude",
+        "/tmp"
+      ],
+      "denyRead": [
+        "~/.ssh/vault/**",
+        "~/.aws",
+        "~/.netrc",
+        "~/.kube",
+        "~/.docker",
+        "~/.npm",
+        "~/.yarn",
+        "~/.cache/pip",
+        "~/.config/gh/hosts.yml",
+        "**/.env*",
+        "**/secrets/**",
+        "**/credentials/**",
+        "**/private/**",
+        "**/*.pem",
+        "**/*.key",
+        "**/*.crt",
+        "**/*.p12",
+        "**/*.pfx"
+      ],
+      "allowWrite": [
+        ".",
+        "~/.claude",
+        "/tmp"
+      ],
+      "denyWrite": [
+        "~/.ssh/vault/**",
+        "/etc",
+        "/usr",
+        "/bin",
+        "/sbin",
+        "/root"
+      ]
+    }
+  }
+}
