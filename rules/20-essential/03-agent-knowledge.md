@@ -1,8 +1,6 @@
----
-weight: 4
-category: essential
-description: All agents must use the native knowledge engine for knowledge management
----
+______________________________________________________________________
+
+## weight: 4 category: essential description: All agents must use the native knowledge engine for knowledge management
 
 # KB Engine Rule
 

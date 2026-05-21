@@ -1,8 +1,6 @@
----
-name: ship
-description: Guided PR creation with label mapping, template body, and CI monitoring
-argument-hint: '[--label <label>] [--no-merge]'
----
+______________________________________________________________________
+
+## name: ship description: Guided PR creation with label mapping, template body, and CI monitoring argument-hint: '\[--label <label>\] [--no-merge]'
 
 # Ship
 

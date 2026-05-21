@@ -45,21 +45,21 @@ After bootstrap and signin, verify that all required MCP servers are responsive:
 
 ### Required Servers (must respond)
 
-| Server                    | Verification        | If Unavailable                              |
+| Server | Verification | If Unavailable |
 | ------------------------- | ------------------- | ------------------------------------------- |
-| your-agent-bus        | `read_bus(limit=1)` | Cannot coordinate — read-only mode          |
-| your-agent-docs       | `list_documents()`  | Fallback: read `~/.your-org/docs/` directly |
-| your-agent-standards  | `list_standards()`  | Proceed without quality gates               |
-| your-agent-thresholds | `check_threshold()` | Assume minimum tier (worker)                |
+| your-agent-bus | `read_bus(limit=1)` | Cannot coordinate — read-only mode |
+| your-agent-docs | `list_documents()` | Fallback: read `~/.your-org/docs/` directly |
+| your-agent-standards | `list_standards()` | Proceed without quality gates |
+| your-agent-thresholds | `check_threshold()` | Assume minimum tier (worker) |
 
 ### Optional Servers (degraded mode if unavailable)
 
-| Server                   | Verification         | If Unavailable         |
+| Server | Verification | If Unavailable |
 | ------------------------ | -------------------- | ---------------------- |
-| your-agent-economy   | `get_balance()`      | Skip economy tracking  |
-| your-agent-knowledge | `status()`           | Skip KB operations     |
-| your-agent-security  | `pipeline_status()`  | Skip security pipeline |
-| your-agent-reader    | (no-op verification) | Read files directly    |
+| your-agent-economy | `get_balance()` | Skip economy tracking |
+| your-agent-knowledge | `status()` | Skip KB operations |
+| your-agent-security | `pipeline_status()` | Skip security pipeline |
+| your-agent-reader | (no-op verification) | Read files directly |
 
 ### Verification Procedure
 
@@ -112,11 +112,11 @@ When a second Claude session starts in the same workspace:
 
 ### Conflict resolution
 
-| Scenario                               | Resolution                                            |
+| Scenario | Resolution |
 | -------------------------------------- | ----------------------------------------------------- |
-| Same file, different tasks             | One session defers, picks different work              |
-| Same file, same task                   | Higher-tier session claims, lower-tier assists        |
-| Different files                        | Both proceed, post progress periodically              |
+| Same file, different tasks | One session defers, picks different work |
+| Same file, same task | Higher-tier session claims, lower-tier assists |
+| Different files | Both proceed, post progress periodically |
 | One session idle (15 min no heartbeat) | Reap via `reap_stale_heartbeats`, claim orphaned work |
 
 ## 5. HITL Onboarding
@@ -126,12 +126,12 @@ before full participation. Defined in `rules/04-hitl-onboarding.md`.
 
 ### Phases
 
-| Phase             | Duration | Gate                               |
+| Phase | Duration | Gate |
 | ----------------- | -------- | ---------------------------------- |
-| 1. Telegram setup | ~10 min  | Receive test message               |
-| 2. Claude config  | ~10 min  | Approve test decision via Telegram |
-| 3. Bus protocol   | ~10 min  | Pass bus protocol quiz (100%)      |
-| 4. Economy access | ~10 min  | Submit comprehension statement     |
+| 1. Telegram setup | ~10 min | Receive test message |
+| 2. Claude config | ~10 min | Approve test decision via Telegram |
+| 3. Bus protocol | ~10 min | Pass bus protocol quiz (100%) |
+| 4. Economy access | ~10 min | Submit comprehension statement |
 
 Until `~/.your-org/config/hitl_onboarding_complete.json` exists, HITL operates
 in restricted mode: read-only bus, no approvals, no meetings.

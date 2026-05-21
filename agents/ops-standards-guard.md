@@ -1,9 +1,6 @@
----
-name: standards-guard
-description: Enforces boring operational standards in docs. Blocks manifesto content, phantom repo links, and philosophy in README.md, CONTRIBUTING.md, SECURITY.md files under .github/.
-tools: [Read, Grep, Glob]
-model: haiku
----
+______________________________________________________________________
+
+## name: standards-guard description: Enforces boring operational standards in docs. Blocks manifesto content, phantom repo links, and philosophy in README.md, CONTRIBUTING.md, SECURITY.md files under .github/. tools: [Read, Grep, Glob] model: haiku
 
 ## Mission
 

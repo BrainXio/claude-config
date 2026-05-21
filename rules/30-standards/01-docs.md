@@ -1,8 +1,6 @@
----
-weight: 8
-category: standards
-description: All agents must use canonical documentation in ~/.your-org/docs/
----
+______________________________________________________________________
+
+## weight: 8 category: standards description: All agents must use canonical documentation in ~/.your-org/docs/
 
 # YourOrg Docs Rule
 

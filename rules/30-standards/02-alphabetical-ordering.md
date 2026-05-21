@@ -1,8 +1,6 @@
----
-weight: 9
-category: standards
-description: Prefer strict alphabetical ordering for lists, tables, and ordered collections
----
+______________________________________________________________________
+
+## weight: 9 category: standards description: Prefer strict alphabetical ordering for lists, tables, and ordered collections
 
 # Alphabetical Ordering
 

@@ -4,7 +4,7 @@
 
 This file is read by the LLM compiler (`scripts/compile.py`) and by Claude hooks to understand how to structure and maintain the knowledge base.
 
----
+______________________________________________________________________
 
 ## Directory Layout (Current)
 
@@ -36,7 +36,7 @@ This file is read by the LLM compiler (`scripts/compile.py`) and by Claude hooks
 └── .gitignore
 ```
 
----
+______________________________________________________________________
 
 ## Structural Files
 
@@ -67,7 +67,7 @@ Append-only chronological record.
 - QA filed: 0
 ```
 
----
+______________________________________________________________________
 
 ## Article Types & Templates
 
@@ -149,17 +149,17 @@ filed: 2026-05-05
 ---
 ```
 
----
+______________________________________________________________________
 
 ## Core Agent Operations
 
 ### Compile (`scripts/compile.py`)
 
 1. Read today’s daily log
-2. Read `knowledge/index.md` for current state
-3. Identify new knowledge, updates, and connections
-4. Create or update articles (concepts first, then connections)
-5. Update `index.md` and append to `log.md`
+1. Read `knowledge/index.md` for current state
+1. Identify new knowledge, updates, and connections
+1. Create or update articles (concepts first, then connections)
+1. Update `index.md` and append to `log.md`
 
 **Rules**:
 
@@ -172,10 +172,10 @@ filed: 2026-05-05
 Index-guided retrieval (no vector search):
 
 1. Read `index.md`
-2. Select 3–10 most relevant articles
-3. Read full content of selected articles
-4. Synthesize answer with `[[wikilink]]` citations
-5. (Optional `--file-back`) → create QA article
+1. Select 3–10 most relevant articles
+1. Read full content of selected articles
+1. Synthesize answer with `[[wikilink]]` citations
+1. (Optional `--file-back`) → create QA article
 
 ### Lint (`scripts/lint.py`)
 
@@ -189,7 +189,7 @@ Health checks:
 - Sparse articles (< 200 words)
 - Potential contradictions
 
----
+______________________________________________________________________
 
 ## Conventions & Style
 
@@ -203,7 +203,7 @@ Health checks:
 - **Sources**: Always link back to originating daily log(s)
 - **Links**: Prefer `[[concepts/...]]` over raw URLs when referencing internal knowledge
 
----
+______________________________________________________________________
 
 ## Best Practices for Claude / Agents
 
@@ -213,7 +213,7 @@ Health checks:
 - Use `lint` regularly and address issues promptly.
 - Daily logs are **source of truth** for provenance — never delete them.
 
----
+______________________________________________________________________
 
 This file is the single source of truth for how the entire knowledge system should behave. Keep it up to date as you evolve the system.
 

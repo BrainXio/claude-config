@@ -1,8 +1,6 @@
----
-weight: 0
-category: universal
-description: Never attribute output to any tool, platform, model, or external source
----
+______________________________________________________________________
+
+## weight: 0 category: universal description: Never attribute output to any tool, platform, model, or external source
 
 # No Attribution Rule — STRICT
 

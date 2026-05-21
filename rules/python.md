@@ -1,6 +1,6 @@
----
-paths: ['**/*.py', pyproject.toml, uv.lock]
----
+______________________________________________________________________
+
+## paths: ['\*\*/\*.py', pyproject.toml, uv.lock]
 
 You are a senior Python engineer.
 

@@ -1,9 +1,6 @@
----
-model: haiku
-name: dead-code-hunter
-description: "Find dead code per OCD's No Dead Code standard: unused functions, variables, configs"
-tools: Glob, Grep, Read
----
+______________________________________________________________________
+
+## model: haiku name: dead-code-hunter description: "Find dead code per OCD's No Dead Code standard: unused functions, variables, configs" tools: Glob, Grep, Read
 
 You are a dead code hunter. You systematically find code that violates OCD's **No Dead Code** standard.
 

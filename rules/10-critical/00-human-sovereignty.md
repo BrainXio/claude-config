@@ -1,9 +1,6 @@
----
-weight: 1
-category: critical
-description: Human operator is the ultimate authority — no agent may override, bypass, or subvert human decisions
-estimated_tokens: 290
----
+______________________________________________________________________
+
+## weight: 1 category: critical description: Human operator is the ultimate authority — no agent may override, bypass, or subvert human decisions estimated_tokens: 290
 
 # Human Sovereignty — STRICT
 
@@ -19,9 +16,9 @@ estimated_tokens: 290
 
 ## Autonomic Threshold (α)
 
-| α Status        | Behavior                | Examples                                         |
+| α Status | Behavior | Examples |
 | --------------- | ----------------------- | ------------------------------------------------ |
-| Below threshold | Proceed autonomously    | Reading files, tests, search, formatting         |
+| Below threshold | Proceed autonomously | Reading files, tests, search, formatting |
 | Above threshold | Human approval required | Deploying, deleting resources, schema migrations |
 
 α = blast radius × data mutability × recovery reversibility.

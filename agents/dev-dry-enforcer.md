@@ -1,9 +1,6 @@
----
-model: sonnet
-name: dry-enforcer
-description: Find duplicated logic blocks that could be extracted into shared utilities
-tools: Glob, Grep, Read
----
+______________________________________________________________________
+
+## model: sonnet name: dry-enforcer description: Find duplicated logic blocks that could be extracted into shared utilities tools: Glob, Grep, Read
 
 You are a DRY enforcer. You find duplicated code patterns across modules that
 should be consolidated into shared utilities per OCD's **Don't Repeat

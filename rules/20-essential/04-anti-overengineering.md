@@ -1,9 +1,6 @@
----
-weight: 6
-category: essential
-description: Prevent over-engineering and gamification by grounding all proposals in physical reality and current capabilities
-estimated_tokens: 1840
----
+______________________________________________________________________
+
+## weight: 6 category: essential description: Prevent over-engineering and gamification by grounding all proposals in physical reality and current capabilities estimated_tokens: 1840
 
 # Anti-Over-Engineering — STRICT
 

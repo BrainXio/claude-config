@@ -1,8 +1,6 @@
----
-weight: 7
-category: standards
-description: Use MCP tool interfaces for YourOrg services — raw file reads are fallback only
----
+______________________________________________________________________
+
+## weight: 7 category: standards description: Use MCP tool interfaces for YourOrg services — raw file reads are fallback only
 
 # MCP Tools First
 
@@ -10,15 +8,15 @@ description: Use MCP tool interfaces for YourOrg services — raw file reads are
 
 ## Services
 
-| Service       | MCP Server                  | Primary Tools                                                   |
+| Service | MCP Server | Primary Tools |
 | ------------- | --------------------------- | --------------------------------------------------------------- |
-| Coordination  | `your-agent-bus`        | `signin`, `signout`, `post_message`, `send_message`, `poll_bus` |
-| Documentation | `your-agent-docs`       | `get_document`, `list_documents`                                |
-| Economy       | `your-agent-economy`    | `record_credit`, `record_debit`, `get_balance`, `get_ledger`    |
-| Knowledge     | `your-agent-knowledge`  | `query`, `ingest`, `compile`, `validate`, `status`              |
-| Security      | `your-agent-security`   | `pipeline_check`, `evaluate_tool_gate`, `log_security_event`    |
-| Thresholds    | `your-agent-thresholds` | `check_threshold`                                               |
-| Reading       | `your-agent-reader`     | `read_document`                                                 |
+| Coordination | `your-agent-bus` | `signin`, `signout`, `post_message`, `send_message`, `poll_bus` |
+| Documentation | `your-agent-docs` | `get_document`, `list_documents` |
+| Economy | `your-agent-economy` | `record_credit`, `record_debit`, `get_balance`, `get_ledger` |
+| Knowledge | `your-agent-knowledge` | `query`, `ingest`, `compile`, `validate`, `status` |
+| Security | `your-agent-security` | `pipeline_check`, `evaluate_tool_gate`, `log_security_event` |
+| Thresholds | `your-agent-thresholds` | `check_threshold` |
+| Reading | `your-agent-reader` | `read_document` |
 
 ## Forbidden
 

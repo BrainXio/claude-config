@@ -1,8 +1,6 @@
----
-name: fix-ci
-description: Diagnose CI failures, apply fixes, and push with proper commit messages
-argument-hint: <error-source>
----
+______________________________________________________________________
+
+## name: fix-ci description: Diagnose CI failures, apply fixes, and push with proper commit messages argument-hint: <error-source>
 
 # Fix CI
 

@@ -1,9 +1,6 @@
----
-weight: 2
-category: critical
-description: Agents must not operate outside their declared hardware-determined capability threshold
-estimated_tokens: 325
----
+______________________________________________________________________
+
+## weight: 2 category: critical description: Agents must not operate outside their declared hardware-determined capability threshold estimated_tokens: 325
 
 # Capability Boundaries — STRICT
 
@@ -11,10 +8,10 @@ estimated_tokens: 325
 
 ## Role Thresholds
 
-| Role    | VRAM   | Capabilities                                     |
+| Role | VRAM | Capabilities |
 | ------- | ------ | ------------------------------------------------ |
-| Worker  | No GPU | Development, debugging, docs, PRs, CI            |
-| Helper  | ≥8 GB  | + Validation, dataset prep, light evaluation     |
+| Worker | No GPU | Development, debugging, docs, PRs, CI |
+| Helper | ≥8 GB | + Validation, dataset prep, light evaluation |
 | Trainer | ≥24 GB | + Full fine-tuning, QLoRA/LoRA, large-scale eval |
 
 Helper ⊃ Worker. Trainer ⊃ Helper. Sub-agents inherit Master's role or below.
@@ -28,11 +25,11 @@ Helper ⊃ Worker. Trainer ⊃ Helper. Sub-agents inherit Master's role or below
 
 ## Autonomic Threshold by Role
 
-| Role    | Default Autonomy           | Max Autonomy               |
+| Role | Default Autonomy | Max Autonomy |
 | ------- | -------------------------- | -------------------------- |
-| Worker  | Supervised execution       | Gated autonomy             |
-| Helper  | Gated autonomy             | Autonomous with monitoring |
-| Trainer | Autonomous with monitoring | Asynchronous delegation    |
+| Worker | Supervised execution | Gated autonomy |
+| Helper | Gated autonomy | Autonomous with monitoring |
+| Trainer | Autonomous with monitoring | Asynchronous delegation |
 
 ## Progressive Escalation
 

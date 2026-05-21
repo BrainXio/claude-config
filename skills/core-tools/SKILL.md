@@ -1,7 +1,6 @@
----
-name: core-tools
-description: Discover available claude-cli commands and hooks
----
+______________________________________________________________________
+
+## name: core-tools description: Discover available claude-cli commands and hooks
 
 # Core Tools
 

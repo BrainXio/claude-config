@@ -1,8 +1,6 @@
----
-name: doc-sync
-description: Synchronize documentation with codebase changes using drift detection
-argument-hint: '[scope]'
----
+______________________________________________________________________
+
+## name: doc-sync description: Synchronize documentation with codebase changes using drift detection argument-hint: '[scope]'
 
 # Doc Sync
 

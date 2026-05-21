@@ -1,8 +1,6 @@
----
-name: deconstruct-plan
-description: Deconstruct a master plan into atomic executable steps using R.D.P. ritual
-argument-hint: <master-plan-path> [--repo <repo>]
----
+______________________________________________________________________
+
+## name: deconstruct-plan description: Deconstruct a master plan into atomic executable steps using R.D.P. ritual argument-hint: <master-plan-path> \[--repo <repo>\]
 
 # Deconstruct Plan
 
