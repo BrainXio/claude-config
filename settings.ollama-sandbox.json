@@ -1,0 +1,67 @@
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "http://localhost:11434",
+    "ANTHROPIC_AUTH_TOKEN": "ollama",
+    "ANTHROPIC_API_KEY": "",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "deepseek-v4-pro:cloud",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "kimi-k2.6:cloud",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "qwen3.5:cloud",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "qwen3-coder-next:cloud"
+  },
+
+  "sandbox": {
+    "enabled": false,
+    "failIfUnavailable": true,
+    "autoAllowBashIfSandboxed": true,
+    "allowUnsandboxedCommands": true,
+    "excludedCommands": [
+      "ssh",
+      "gpg",
+      "gpg2",
+      "sudo",
+      "su",
+      "pkexec",
+      "doas"
+    ],
+    "filesystem": {
+      "allowRead": [
+        ".",
+        "~/.claude",
+        "/tmp"
+      ],
+      "denyRead": [
+        "~/.ssh/vault/**",
+        "~/.aws",
+        "~/.netrc",
+        "~/.kube",
+        "~/.docker",
+        "~/.npm",
+        "~/.yarn",
+        "~/.cache/pip",
+        "~/.config/gh/hosts.yml",
+        "**/.env*",
+        "**/secrets/**",
+        "**/credentials/**",
+        "**/private/**",
+        "**/*.pem",
+        "**/*.key",
+        "**/*.crt",
+        "**/*.p12",
+        "**/*.pfx"
+      ],
+      "allowWrite": [
+        ".",
+        "~/.claude",
+        "/tmp"
+      ],
+      "denyWrite": [
+        "~/.ssh/vault/**",
+        "/etc",
+        "/usr",
+        "/bin",
+        "/sbin",
+        "/root"
+      ]
+    }
+  }
+}
