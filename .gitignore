@@ -4,6 +4,8 @@
 # Allowlist: only config files
 !.gitignore
 !settings.json
+!settings.claude.json
+!settings.ollama.json
 !settings.local.json
 !.mcp.json
 !.mdformat.toml
