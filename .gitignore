@@ -3,6 +3,7 @@
 
 # Allowlist: only config files
 !.gitignore
+!README.md
 !settings.json
 !settings.env.json
 !settings.env-ollama.json
