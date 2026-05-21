@@ -11,16 +11,16 @@ sessions.
 
 ## Role Taxonomy
 
-| Role | subagent_type | Responsibility | Context Scope |
+| Role             | subagent_type        | Responsibility                        | Context Scope                                     |
 | ---------------- | -------------------- | ------------------------------------- | ------------------------------------------------- |
-| Implementer | `coder-worker` | Write code, make changes | Focused: file paths + change spec |
-| Tester | `test-writer` | Write/run tests, verify coverage | Focused: implementation files + expected behavior |
-| Reviewer | `bug-hunter` | Find bugs, dead code, inconsistencies | Broad: target files + patterns |
-| Researcher | `Explore` | Read-only codebase exploration | Broad: search queries + scope |
-| Documenter | `docs-writer` | Update docs, create articles | Focused: topic + target files |
-| Planner | `Plan` | Design implementation approach | Broad: requirements + constraints |
-| Auditor | `complexity-reducer` | Simplify overly complex code | Focused: target files |
-| Meeting delegate | `general-purpose` | Attend bus meetings, vote, report | Meeting context + positions |
+| Implementer      | `coder-worker`       | Write code, make changes              | Focused: file paths + change spec                 |
+| Tester           | `test-writer`        | Write/run tests, verify coverage      | Focused: implementation files + expected behavior |
+| Reviewer         | `bug-hunter`         | Find bugs, dead code, inconsistencies | Broad: target files + patterns                    |
+| Researcher       | `Explore`            | Read-only codebase exploration        | Broad: search queries + scope                     |
+| Documenter       | `docs-writer`        | Update docs, create articles          | Focused: topic + target files                     |
+| Planner          | `Plan`               | Design implementation approach        | Broad: requirements + constraints                 |
+| Auditor          | `complexity-reducer` | Simplify overly complex code          | Focused: target files                             |
+| Meeting delegate | `general-purpose`    | Attend bus meetings, vote, report     | Meeting context + positions                       |
 
 ## Dispatch Rules
 
@@ -29,12 +29,12 @@ sessions.
 For standard work pipelines, use the `/dispatch` skill which reads workflow
 definitions from `.claude/workflows/*.json`:
 
-| Workflow | File | Stages |
+| Workflow            | File                                       | Stages                                                   |
 | ------------------- | ------------------------------------------ | -------------------------------------------------------- |
 | `feature-implement` | `.claude/workflows/feature-implement.json` | research → plan → implement → audit → test → docs → ship |
-| `fix-bug` | `.claude/workflows/fix-bug.json` | audit → implement → test → ship |
-| `train-model` | `.claude/workflows/train-model.json` | research → prep → train → eval → docs (tier-gated) |
-| `document-only` | `.claude/workflows/document-only.json` | research → write → review → ship |
+| `fix-bug`           | `.claude/workflows/fix-bug.json`           | audit → implement → test → ship                          |
+| `train-model`       | `.claude/workflows/train-model.json`       | research → prep → train → eval → docs (tier-gated)       |
+| `document-only`     | `.claude/workflows/document-only.json`     | research → write → review → ship                         |
 
 ```
 /dispatch <workflow-name> [--stage <name>] [--dry-run]
@@ -50,17 +50,17 @@ The dispatch skill handles:
 
 ### When to use sub-agents vs. direct work
 
-| Work type | Approach | Why |
+| Work type                              | Approach                                               | Why                                    |
 | -------------------------------------- | ------------------------------------------------------ | -------------------------------------- |
-| Single-file edit (< 20 lines) | Direct work | Overhead exceeds benefit |
-| Multi-file implementation | dispatch feature-implement | Tier-gated, worktree-isolated workflow |
-| Bug fix | dispatch fix-bug | Audit-first streamlined pipeline |
-| Independent features (no file overlap) | coder-worker x N in parallel | Each gets own worktree |
-| Testing (after implementation) | test-writer | Independent perspective |
-| Code audit | dispatch fix-bug --stage audit | Full 7-auditor parallel run |
-| Research/exploration | Explore or dispatch feature-implement --stage research | Read-only, safe in parallel |
-| Documentation | docs-writer or dispatch document-only | Worktree-isolated, mdformat enforced |
-| Meeting attendance (focused) | general-purpose | Main session continues working |
+| Single-file edit (< 20 lines)          | Direct work                                            | Overhead exceeds benefit               |
+| Multi-file implementation              | dispatch feature-implement                             | Tier-gated, worktree-isolated workflow |
+| Bug fix                                | dispatch fix-bug                                       | Audit-first streamlined pipeline       |
+| Independent features (no file overlap) | coder-worker x N in parallel                           | Each gets own worktree                 |
+| Testing (after implementation)         | test-writer                                            | Independent perspective                |
+| Code audit                             | dispatch fix-bug --stage audit                         | Full 7-auditor parallel run            |
+| Research/exploration                   | Explore or dispatch feature-implement --stage research | Read-only, safe in parallel            |
+| Documentation                          | docs-writer or dispatch document-only                  | Worktree-isolated, mdformat enforced   |
+| Meeting attendance (focused)           | general-purpose                                        | Main session continues working         |
 
 ### Parallelism rules
 
@@ -86,11 +86,11 @@ For manual dispatch without the workflow runner:
 
 ## Meeting Delegation
 
-| Meeting type | Who attends | Why |
+| Meeting type                             | Who attends           | Why                                         |
 | ---------------------------------------- | --------------------- | ------------------------------------------- |
-| Focused (specific topic, < 30 min) | Sub-agent delegate | Main session continues implementation |
+| Focused (specific topic, < 30 min)       | Sub-agent delegate    | Main session continues implementation       |
 | Vision (architecture, roadmap, > 30 min) | Main session directly | Foundational decisions require full context |
-| Fire alarm (P0/P1) | Main session directly | Urgency requires immediate response |
+| Fire alarm (P0/P1)                       | Main session directly | Urgency requires immediate response         |
 
 The sub-agent delegate receives:
 
@@ -113,12 +113,12 @@ When a sub-agent fails (rate limit, error, poor results):
 
 1. **Decision matrix**
 
-| Value/Cost | Action |
+| Value/Cost                  | Action                              |
 | --------------------------- | ----------------------------------- |
-| High value, low retry cost | Retry with refined instructions |
+| High value, low retry cost  | Retry with refined instructions     |
 | High value, high retry cost | Main session does the work directly |
-| Low value, any cost | Skip the task, post status on bus |
-| Unknown value | Evaluate against sprint priorities |
+| Low value, any cost         | Skip the task, post status on bus   |
+| Unknown value               | Evaluate against sprint priorities  |
 
 3. **Retry budget** — Maximum 2 retries per sub-agent task. After 2 failures:
 

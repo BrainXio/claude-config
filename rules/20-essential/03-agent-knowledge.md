@@ -8,12 +8,12 @@ ______________________________________________________________________
 
 ## CLI Commands
 
-| Command | Purpose |
-|---------|---------|
-| `claude-knowledge ingest <dir>` | Ingest markdown files into KB |
-| `claude-knowledge compile` | Compile daily logs into articles |
-| `claude-knowledge query "<question>"` | TF-IDF semantic search |
-| `claude-knowledge validate` | Check KB health |
+| Command                               | Purpose                          |
+| ------------------------------------- | -------------------------------- |
+| `claude-knowledge ingest <dir>`       | Ingest markdown files into KB    |
+| `claude-knowledge compile`            | Compile daily logs into articles |
+| `claude-knowledge query "<question>"` | TF-IDF semantic search           |
+| `claude-knowledge validate`           | Check KB health                  |
 
 ## Module Imports
 

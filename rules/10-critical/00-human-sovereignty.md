@@ -16,9 +16,9 @@ ______________________________________________________________________
 
 ## Autonomic Threshold (α)
 
-| α Status | Behavior | Examples |
+| α Status        | Behavior                | Examples                                         |
 | --------------- | ----------------------- | ------------------------------------------------ |
-| Below threshold | Proceed autonomously | Reading files, tests, search, formatting |
+| Below threshold | Proceed autonomously    | Reading files, tests, search, formatting         |
 | Above threshold | Human approval required | Deploying, deleting resources, schema migrations |
 
 α = blast radius × data mutability × recovery reversibility.

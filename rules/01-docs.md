@@ -31,10 +31,10 @@ in `.mcp.json`:
 
 ## Available Tools
 
-| Tool | Description |
+| Tool             | Description                                                     |
 | ---------------- | --------------------------------------------------------------- |
-| `get_document` | Retrieve any document by relative path from `~/.your-org/docs/` |
-| `list_documents` | List all available documents with titles and tags |
+| `get_document`   | Retrieve any document by relative path from `~/.your-org/docs/` |
+| `list_documents` | List all available documents with titles and tags               |
 
 Setup operations (bootstrap and rule injection) run automatically when the
 MCP server starts.

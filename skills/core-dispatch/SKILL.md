@@ -39,11 +39,11 @@ an execution plan:
 python3 .claude/skills/dispatch/dispatch.py <workflow-name> [--dry-run] [--stage <name>] [--json]
 ```
 
-| Flag | Purpose |
+| Flag        | Purpose                                             |
 | ----------- | --------------------------------------------------- |
 | `--dry-run` | Show which stages would execute without dispatching |
-| `--stage` | Execute a single stage only |
-| `--json` | Output raw JSON plan for programmatic use |
+| `--stage`   | Execute a single stage only                         |
+| `--json`    | Output raw JSON plan for programmatic use           |
 
 The script reads `.claude/workflows/<name>.json`, evaluates tier gates against
 `state.json`, and outputs the dispatch plan. Use this as the source of truth
@@ -58,24 +58,24 @@ Read `.claude/workflows/<name>.json`. Validate against the expected schema.
 Read current tier from `state.json` via `mcp__your-agent-bus__bootstrap()`.
 Determine the numeric tier level:
 
-| Profile | Tier | Description |
+| Profile        | Tier | Description         |
 | -------------- | ---- | ------------------- |
-| worker-cloud | 1 | Worker, cloud API |
-| worker-local | 0 | Worker, no cloud |
-| helper-cloud | 3 | Helper, cloud API |
-| helper-hybrid | 3 | Helper, hybrid |
-| helper-local | 2 | Helper, 8GB local |
-| trainer-cloud | 5 | Trainer, cloud API |
-| trainer-hybrid | 4 | Trainer, hybrid |
-| trainer-local | 4 | Trainer, 24GB local |
+| worker-cloud   | 1    | Worker, cloud API   |
+| worker-local   | 0    | Worker, no cloud    |
+| helper-cloud   | 3    | Helper, cloud API   |
+| helper-hybrid  | 3    | Helper, hybrid      |
+| helper-local   | 2    | Helper, 8GB local   |
+| trainer-cloud  | 5    | Trainer, cloud API  |
+| trainer-hybrid | 4    | Trainer, hybrid     |
+| trainer-local  | 4    | Trainer, 24GB local |
 
 ### 3. Evaluate Gates
 
 For each stage, check `gate`:
 
-| Gate | Action |
+| Gate          | Action                                      |
 | ------------- | ------------------------------------------- |
-| `"always"` | Proceed unconditionally |
+| `"always"`    | Proceed unconditionally                     |
 | `"tier >= N"` | Proceed if current tier >= N, else fallback |
 
 When gate fails:
@@ -112,17 +112,17 @@ python3 .claude/skills/dispatch/dispatch.py <workflow-name> --json
 
 **Agent type mapping** (from workflow JSON `agent` field):
 
-| Workflow agent | `subagent_type` | Isolation |
+| Workflow agent | `subagent_type`            | Isolation |
 | -------------- | -------------------------- | --------- |
-| `Explore` | `Explore` | none |
-| `Plan` | `Plan` | none |
-| `coder-worker` | `coder-worker` | worktree |
-| `test-writer` | `test-writer` | none |
-| `bug-hunter` | `bug-hunter` | none |
-| `docs-writer` | `docs-writer` | worktree |
-| `code-audit` | multi-audit (7 sub-agents) | none |
-| `trainer` | `general-purpose` | worktree |
-| `ship-skill` | `general-purpose` | none |
+| `Explore`      | `Explore`                  | none      |
+| `Plan`         | `Plan`                     | none      |
+| `coder-worker` | `coder-worker`             | worktree  |
+| `test-writer`  | `test-writer`              | none      |
+| `bug-hunter`   | `bug-hunter`               | none      |
+| `docs-writer`  | `docs-writer`              | worktree  |
+| `code-audit`   | multi-audit (7 sub-agents) | none      |
+| `trainer`      | `general-purpose`          | worktree  |
+| `ship-skill`   | `general-purpose`          | none      |
 
 **Post progress** — call `mcp__your-agent-bus__post_message` on
 `agent-activity` after each stage completion with status and deliverables.
@@ -170,14 +170,14 @@ re-running a failed stage without restarting the entire pipeline.
 
 ## Integration
 
-| System | Integration Point |
+| System              | Integration Point                                                                  |
 | ------------------- | ---------------------------------------------------------------------------------- |
-| `orchestrate` skill | Calls dispatch for workflow loading and gate checking |
-| `inception-monitor` | Tracks worktree sub-agents dispatched by dispatch |
-| `bus` | Post progress on `agent-activity` topic |
-| `economy` | Record stage costs and value |
-| `state.json` | Read current tier and profile |
-| `dispatch.py` | Executable plan generator (reads workflow, evaluates gates, outputs JSON or table) |
+| `orchestrate` skill | Calls dispatch for workflow loading and gate checking                              |
+| `inception-monitor` | Tracks worktree sub-agents dispatched by dispatch                                  |
+| `bus`               | Post progress on `agent-activity` topic                                            |
+| `economy`           | Record stage costs and value                                                       |
+| `state.json`        | Read current tier and profile                                                      |
+| `dispatch.py`       | Executable plan generator (reads workflow, evaluates gates, outputs JSON or table) |
 
 ## Related
 

@@ -176,12 +176,12 @@ ______________________________________________________________________
 
 Four patterns for multi-session work, using existing bus infrastructure:
 
-| Pattern | When | Bus Mechanism | Example |
+| Pattern             | When                         | Bus Mechanism                              | Example                                    |
 | ------------------- | ---------------------------- | ------------------------------------------ | ------------------------------------------ |
-| **Fire-and-forget** | Independent parallel work | worktree + `post_message` status | Two coder-workers on non-overlapping files |
-| **Handoff** | Sequential dependency | `transition_work_item` + `suggest_handoff` | Implement → Test |
-| **Meeting** | 3+ sessions, decision needed | `convene_meeting` + `rsvp` + vote | Architecture decision |
-| **Partnership** | 2 sessions, non-foundational | `send_message` + coordinate | Pair debugging |
+| **Fire-and-forget** | Independent parallel work    | worktree + `post_message` status           | Two coder-workers on non-overlapping files |
+| **Handoff**         | Sequential dependency        | `transition_work_item` + `suggest_handoff` | Implement → Test                           |
+| **Meeting**         | 3+ sessions, decision needed | `convene_meeting` + `rsvp` + vote          | Architecture decision                      |
+| **Partnership**     | 2 sessions, non-foundational | `send_message` + coordinate                | Pair debugging                             |
 
 **Bus protocol rules** (from 03-bus-coordination.md):
 
@@ -299,39 +299,39 @@ ______________________________________________________________________
 
 ## 8. Integration Map
 
-| Integration | What It Does | Existing Artifact |
+| Integration              | What It Does                                          | Existing Artifact                           |
 | ------------------------ | ----------------------------------------------------- | ------------------------------------------- |
-| `orchestrate` skill | Reads workflow JSON, dispatches stages with templates | `.claude/skills/orchestrate/SKILL.md` |
-| `code-audit` skill | Sub-workflow: runs 7 auditors in parallel | `.claude/skills/code-audit/SKILL.md` |
-| `inception-monitor` | Tracks worktree status, aggregates SUMMARY.md | `.claude/skills/inception-monitor/SKILL.md` |
-| `deconstruct-plan` skill | Phase 1: master plan → deconstructed plan | `.claude/skills/deconstruct-plan/SKILL.md` |
-| `schedule-tasks` skill | Phase 1: plan → atomic task JSONs | `.claude/skills/schedule-tasks/SKILL.md` |
-| `ship` skill | Phase 9: PR creation + CI monitoring | `.claude/skills/ship/SKILL.md` |
-| `fix-ci` skill | Phase 9 fallback: CI diagnosis + fix | `.claude/skills/fix-ci/SKILL.md` |
-| 18 sub-agent defs | Worker units dispatched by workflow stages | `.claude/agents/*.md` |
-| 6 profiles | Gate conditions reference profile tier | `.claude/profiles/*.json` |
-| 00-capability-boundaries | Tier inheritance: sub-agents ≤ main tier | `.claude/rules/00-capability-boundaries.md` |
-| 03-bus-coordination | Session collab: meetings, partnerships, HITL | `.claude/rules/03-bus-coordination.md` |
-| your-agent-economy | Economy-aware dispatch costs | MCP server (tools) |
-| your-agent-knowledge | KB query + compile (Phases 2, 8, 10) | MCP server (tools) |
+| `orchestrate` skill      | Reads workflow JSON, dispatches stages with templates | `.claude/skills/orchestrate/SKILL.md`       |
+| `code-audit` skill       | Sub-workflow: runs 7 auditors in parallel             | `.claude/skills/code-audit/SKILL.md`        |
+| `inception-monitor`      | Tracks worktree status, aggregates SUMMARY.md         | `.claude/skills/inception-monitor/SKILL.md` |
+| `deconstruct-plan` skill | Phase 1: master plan → deconstructed plan             | `.claude/skills/deconstruct-plan/SKILL.md`  |
+| `schedule-tasks` skill   | Phase 1: plan → atomic task JSONs                     | `.claude/skills/schedule-tasks/SKILL.md`    |
+| `ship` skill             | Phase 9: PR creation + CI monitoring                  | `.claude/skills/ship/SKILL.md`              |
+| `fix-ci` skill           | Phase 9 fallback: CI diagnosis + fix                  | `.claude/skills/fix-ci/SKILL.md`            |
+| 18 sub-agent defs        | Worker units dispatched by workflow stages            | `.claude/agents/*.md`                       |
+| 6 profiles               | Gate conditions reference profile tier                | `.claude/profiles/*.json`                   |
+| 00-capability-boundaries | Tier inheritance: sub-agents ≤ main tier              | `.claude/rules/00-capability-boundaries.md` |
+| 03-bus-coordination      | Session collab: meetings, partnerships, HITL          | `.claude/rules/03-bus-coordination.md`      |
+| your-agent-economy       | Economy-aware dispatch costs                          | MCP server (tools)                          |
+| your-agent-knowledge     | KB query + compile (Phases 2, 8, 10)                  | MCP server (tools)                          |
 
 ______________________________________________________________________
 
 ## 9. Files to Create
 
-| File | Purpose |
+| File                                       | Purpose                                  |
 | ------------------------------------------ | ---------------------------------------- |
-| `.claude/workflows/feature-implement.json` | Default full-stack feature workflow |
-| `.claude/workflows/fix-bug.json` | Bug fix workflow (audit → fix → ship) |
-| `.claude/workflows/train-model.json` | ML training workflow (trainer-tier gate) |
-| `.claude/workflows/document-only.json` | Documentation-only workflow |
-| `.claude/skills/dispatch/SKILL.md` | Tier-aware dispatcher skill |
+| `.claude/workflows/feature-implement.json` | Default full-stack feature workflow      |
+| `.claude/workflows/fix-bug.json`           | Bug fix workflow (audit → fix → ship)    |
+| `.claude/workflows/train-model.json`       | ML training workflow (trainer-tier gate) |
+| `.claude/workflows/document-only.json`     | Documentation-only workflow              |
+| `.claude/skills/dispatch/SKILL.md`         | Tier-aware dispatcher skill              |
 
 ## 10. Files to Modify
 
-| File | Changes |
+| File                                              | Changes                                                                                                 |
 | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| `.claude/skills/orchestrate/SKILL.md` | Add workflow-reading step, tier gate checks, economy-aware dispatch section, trainer template reference |
-| `.claude/skills/orchestrate/templates/trainer.md` | New template for ML/training sub-agents |
-| `docs/AGENTS.md` | Document workflow pipeline and tier matrix |
-| `CLAUDE.md` | Document workflows directory and dispatch skill |
+| `.claude/skills/orchestrate/SKILL.md`             | Add workflow-reading step, tier gate checks, economy-aware dispatch section, trainer template reference |
+| `.claude/skills/orchestrate/templates/trainer.md` | New template for ML/training sub-agents                                                                 |
+| `docs/AGENTS.md`                                  | Document workflow pipeline and tier matrix                                                              |
+| `CLAUDE.md`                                       | Document workflows directory and dispatch skill                                                         |
