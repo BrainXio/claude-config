@@ -6,17 +6,17 @@
         "hooks": [
           {
             "type": "command",
-            "command": "claude-bootstrap",
+            "command": "uvx --from git+https://github.com/BrainXio/claude-cli.git claude-bootstrap",
             "timeout": 30
           },
           {
             "type": "command",
-            "command": "claude-session-start",
+            "command": "uvx --from git+https://github.com/BrainXio/claude-cli.git claude-session-start",
             "timeout": 30
           },
           {
             "type": "command",
-            "command": "bash ${workspaceFolder}/claude-cli/bin/check-model-vision",
+            "command": "uvx --from git+https://github.com/BrainXio/claude-cli.git claude-check-model-vision",
             "timeout": 60
           }
         ]
@@ -28,7 +28,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "claude-pre-compact",
+            "command": "uvx --from git+https://github.com/BrainXio/claude-cli.git claude-pre-compact",
             "timeout": 30
           }
         ]
@@ -40,7 +40,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "claude-session-end",
+            "command": "uvx --from git+https://github.com/BrainXio/claude-cli.git claude-session-end",
             "timeout": 30
           }
         ]
@@ -52,8 +52,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "claude-standards-guard",
-            "timeout": 10
+            "command": "uvx --from git+https://github.com/BrainXio/claude-cli.git claude-standards-guard",
+            "timeout": 30
           }
         ]
       }
