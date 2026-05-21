@@ -1,0 +1,9 @@
+{
+  "editorMode": "normal",
+  "tui": "default",
+  "viewMode": "default",
+  "showTurnDuration": true,
+  "terminalProgressBarEnabled": true,
+  "autoScrollEnabled": true,
+  "respectGitignore": true
+}

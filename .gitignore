@@ -5,11 +5,14 @@
 !.gitignore
 !settings.json
 !settings.env.json
+!settings.env-ollama.json
 !settings.hooks.json
 !settings.permissions.json
 !settings.sandbox.json
 !settings.statusline.json
-!settings.ollama.json
+!settings.model.json
+!settings.ui.json
+!settings.attribution.json
 !settings.local.json
 !.mcp.json
 !.mdformat.toml
