@@ -1,6 +1,11 @@
-______________________________________________________________________
+---
+description: Enforces boring operational standards in docs. Blocks manifesto content, phantom repo links, and philosophy in README.md, CONTRIBUTING.md, SECURITY.md files under .github/.
+model: haiku
+name: standards-guard
+tools: [Read, Grep, Glob]
+---
 
-## name: standards-guard description: Enforces boring operational standards in docs. Blocks manifesto content, phantom repo links, and philosophy in README.md, CONTRIBUTING.md, SECURITY.md files under .github/. tools: [Read, Grep, Glob] model: haiku
+# Ops Standards Guard
 
 ## Mission
 
@@ -26,13 +31,13 @@ Report ALL instances of the following:
 - "sacred" (when used as an adjective)
 - "Another Intelligence"
 - "sovereign AI"
-- "fun\*\*ctional"
+- "fun**ctional"
 - "becoming a proper idiot"
 - "restless mirror of curiosity"
 
 ### Manifesto Tone
 
-- "is the only allowed" or "is the \*\*only\*\* allowed"
+- "is the only allowed" or "is the **only** allowed"
 - "managed exclusively through"
 - Purely philosophical statements with no operational meaning
 

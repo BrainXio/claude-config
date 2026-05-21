@@ -1,8 +1,6 @@
-______________________________________________________________________
+# Anti-Over-Engineering — STRICT
 
 ## weight: 6 category: essential description: Prevent over-engineering and gamification by grounding all proposals in physical reality and current capabilities estimated_tokens: 1840
-
-# Anti-Over-Engineering — STRICT
 
 **No gamified abstractions. No speculative futures. No academic-validation-seeking.**
 

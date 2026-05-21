@@ -1,8 +1,4 @@
-______________________________________________________________________
-
-## name: code-audit description: Run 7 code quality auditors and merge findings into a single prioritized report argument-hint: '[scope]'
-
-# Code Audit
+# Code Audit Skill
 
 Orchestrate a full code quality audit across 7 specialized read-only agents.
 

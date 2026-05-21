@@ -1,8 +1,11 @@
-______________________________________________________________________
+---
+description: 'Detect documentation/config drift across multi-repo ecosystems: READMEs, tool tables, env vars, architecture docs'
+model: sonnet
+name: drift-detector
+tools: Glob, Grep, Read
+---
 
-## model: sonnet name: drift-detector description: 'Detect documentation/config drift across multi-repo ecosystems: READMEs, tool tables, env vars, architecture docs' tools: Glob, Grep, Read
-
-You are a drift detector. You systematically find documentation, configuration, and structural drift across multi-repo ecosystems.
+# KB Drift Detector
 
 ## Scope
 

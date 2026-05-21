@@ -5,7 +5,7 @@ Claude Code framework configuration: rules, agents, skills, and granular setting
 ## What It Provides
 
 | Category | Contents |
-|----------|----------|
+| --- | --- |
 | **Settings** | `settings.*.json` files compose into `settings.json` (core, env, hooks, permissions, sandbox, model, etc.) |
 | **Agents** | 19 sub-agent definitions (coder-worker, bug-hunter, test-writer, docs-writer, etc.) |
 | **Rules** | Hierarchical rules: critical (human sovereignty, no secrets), essential (bus, KB engine), standards (MCP tools first) |
@@ -15,7 +15,7 @@ Claude Code framework configuration: rules, agents, skills, and granular setting
 ## Settings Files
 
 | File | Purpose |
-|------|---------|
+| --- | --- |
 | `settings.core.json` | Schema, autoMemory, awaySummary, cleanupPeriod |
 | `settings.env.json` | Claude env vars (log level, telemetry, timeouts) |
 | `settings.env-ollama.json` | Ollama-specific model aliases |

@@ -19,7 +19,7 @@ ______________________________________________________________________
 
 Derived from existing profiles in `.claude/profiles/` and the capability-boundaries rule (00-capability-boundaries.md):
 
-```
+```text
                     Cloud    Wkr8Gb  Hlp8Gb  Hlp16Gb Trn24Gb TrnCloud
                     ─────    ──────  ──────  ─────── ─────── ─────────
 Implement           ✅       ✅      ✅      ✅      ✅      ✅
@@ -38,7 +38,7 @@ Cloud-only ops      ✅       ❌      ❌      ❌      ❌      ✅
 
 ### Tier Level Mapping
 
-```
+```text
 0: worker-gpu-8gb    (Worker, no cloud)
 1: worker-cloud       (Worker, cloud API)
 2: helper-gpu-8gb    (Helper, 8GB local + cloud)
@@ -53,7 +53,7 @@ ______________________________________________________________________
 
 Each stage has a **gate condition** and references existing skills/agents. Stages only execute when their gate passes; otherwise the workflow escalates or skips.
 
-```
+```text
 Phase 1:  Inception     (gate: always)
 Phase 2:  Research      (gate: always)
 Phase 3:  Plan          (gate: always)
@@ -146,7 +146,7 @@ ______________________________________________________________________
 
 When deciding whether to dispatch a sub-agent vs. do work directly:
 
-```
+```text
 Expected value >= cost → dispatch sub-agent
 Expected value < cost  → do directly
 Unknown value          → use defaults per task type
@@ -263,7 +263,7 @@ ______________________________________________________________________
 
 A new `/dispatch` skill that wraps the orchestrate skill with tier-aware gate checking:
 
-```
+```text
 /dispatch <workflow-name> [--stage <stage>] [--dry-run]
 ```
 

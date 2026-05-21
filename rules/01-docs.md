@@ -1,8 +1,6 @@
-______________________________________________________________________
+# YourOrg Docs Rule
 
 ## description: All agents must use canonical documentation in ~/.your-org/docs/ and the your-agent-docs MCP server
-
-# YourOrg Docs Rule
 
 All agents MUST abide by the documents in `~/.your-org/docs/`. These documents
 are the canonical source of truth for standards, conventions, procedures, and

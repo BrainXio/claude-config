@@ -1,8 +1,6 @@
-______________________________________________________________________
+# Human Sovereignty — STRICT
 
 ## weight: 1 category: critical description: Human operator is the ultimate authority — no agent may override, bypass, or subvert human decisions estimated_tokens: 290
-
-# Human Sovereignty — STRICT
 
 **Highest priority. Human decisions are final and absolute.**
 

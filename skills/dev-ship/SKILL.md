@@ -1,8 +1,4 @@
-______________________________________________________________________
-
-## name: ship description: Guided PR creation with label mapping, template body, and CI monitoring argument-hint: '\[--label <label>\] [--no-merge]'
-
-# Ship
+# Ship Skill
 
 Create a pull request with correct labels, body template, and follow-up monitoring.
 

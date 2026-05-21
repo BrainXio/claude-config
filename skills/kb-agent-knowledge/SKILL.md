@@ -1,8 +1,4 @@
-______________________________________________________________________
-
-## name: agent-knowledge description: Interact with the your-knowledge-engine MCP server for knowledge management argument-hint: <action> [query] [options]
-
-# KB Engine
+# KB Engine Skill
 
 Interact with the `your-knowledge-engine` MCP server to manage the knowledge base:
 ingest, compile, search, validate, and scan.
@@ -22,7 +18,7 @@ ingest, compile, search, validate, and scan.
 | `shortlist`  | `[--domain X]`       | Load prototype ingestion shortlist with optional filtering       |
 | `rules`      | —                    | Return structured KB rules and schema                            |
 | `create`     | `<type> <title>`     | Create a KB article with template scaffolding                    |
-| `stub`       | `[--dry-run]`        | Auto-stub all broken \[[wikilinks]\] in the KB                   |
+| `stub`       | `[--dry-run]`        | Auto-stub all broken [[wikilinks]] in the KB                     |
 | `template`   | `<type>`             | Return article type template with section descriptions           |
 | `inject`     | `[target]`           | Inject the KB Engine rule into target agent systems              |
 | `inject-all` | —                    | Inject the KB Engine rule into all known agent systems           |

@@ -1,4 +1,4 @@
-______________________________________________________________________
+# Dev Single Source Auditor
 
 ## model: haiku name: single-source-auditor description: Find duplicated constants, config values, and patterns that violate the Single Source of Truth standard tools: Glob, Grep, Read
 

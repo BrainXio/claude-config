@@ -1,8 +1,6 @@
-______________________________________________________________________
+# YourOrg Docs Rule
 
 ## weight: 8 category: standards description: All agents must use canonical documentation in ~/.your-org/docs/
-
-# YourOrg Docs Rule
 
 **Use `~/.your-org/docs/` as the canonical source of truth.**
 

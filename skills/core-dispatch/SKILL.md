@@ -1,7 +1,3 @@
-______________________________________________________________________
-
-## name: dispatch description: Tier-aware workflow execution engine — reads workflow JSON, evaluates tier gates, dispatches sub-agents, and tracks completion argument-hint: <workflow-name> \[--stage <name>\] [--dry-run]
-
 # Dispatch Skill
 
 Tier-aware workflow executor. Reads workflow definitions from
@@ -10,7 +6,7 @@ profile, and dispatches stages in dependency order with parallelism support.
 
 ## Usage
 
-```
+```text
 /dispatch feature-implement
 /dispatch fix-bug
 /dispatch train-model
@@ -148,19 +144,19 @@ Per retry policy from workflow JSON:
 `--dry-run` reports which stages would execute, which are gated, and which
 would escalate — without dispatching any sub-agents. Output:
 
-```
+```text
 Workflow: feature-implement (5 stages)
 Tier: 3 (helper-hybrid)
 
 Stage          Gate        Status
 ──────         ────        ──────
-research       always      ✅ will execute
-plan           always      ✅ will execute
-implement      always      ✅ will execute (parallel, 3 workers)
-audit          always      ✅ will execute (7 sub-agents)
-test           always      ✅ will execute
-docs           always      ✅ will execute
-ship           always      ✅ will execute
+research       always      will execute
+plan           always      will execute
+implement      always      will execute (parallel, 3 workers)
+audit          always      will execute (7 sub-agents)
+test           always      will execute
+docs           always      will execute
+ship           always      will execute
 ```
 
 ## Stage-Only Mode

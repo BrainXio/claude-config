@@ -1,8 +1,4 @@
-______________________________________________________________________
-
-## name: claude-hooks description: Reference for the Claude Code hook system — session lifecycle, bootstrap, pre-commit, and memory flush argument-hint: list | hook <name> | source <name>
-
-# Claude Hooks
+# Claude Hooks Skill
 
 The `src/claude_hooks` package provides the Claude Code session lifecycle hooks.
 These are installable via `uvx` from the public GitHub repository and run
@@ -19,14 +15,14 @@ When installed remotely, they run from the published package.
 
 ## Hook Catalog
 
-| Command                | Source File        | Trigger                            | Purpose                                                              |
-| ---------------------- | ------------------ | ---------------------------------- | -------------------------------------------------------------------- |
-| `claude-bootstrap`     | `bootstrap.py`     | SessionStart hook                  | Detect role, VRAM, profile; pull models; sync docs; write state.json |
-| `claude-session-start` | `session_start.py` | SessionStart hook                  | Inject mode, KB index, doc stats, daily log into session context     |
-| `claude-session-end`   | `session_end.py`   | SessionEnd hook                    | Capture transcript, spawn flush process for memory extraction        |
-| `claude-pre-compact`   | `pre_compact.py`   | PreCompact hook                    | Capture transcript before auto-compaction, spawn flush process       |
-| `claude-flush`         | `flush.py`         | Spawned by session-end/pre-compact | Write conversation context to daily log, trigger KB compilation      |
-| `claude-pre-commit`    | `pre_commit.py`    | Git pre-commit                     | Run ruff format, ruff check --fix, mdformat, mypy --strict           |
+| Command | Source File | Trigger | Purpose |
+| --- | --- | --- | --- |
+| `claude-bootstrap` | `bootstrap.py` | SessionStart hook | Detect role, VRAM, profile; pull models; sync docs; write state.json |
+| `claude-session-start` | `session_start.py` | SessionStart hook | Inject mode, KB index, doc stats, daily log into session context |
+| `claude-session-end` | `session_end.py` | SessionEnd hook | Capture transcript, spawn flush process for memory extraction |
+| `claude-pre-compact` | `pre_compact.py` | PreCompact hook | Capture transcript before auto-compaction, spawn flush process |
+| `claude-flush` | `flush.py` | Spawned by session-end/pre-compact | Write conversation context to daily log, trigger KB compilation |
+| `claude-pre-commit` | `pre_commit.py` | Git pre-commit | Run ruff format, ruff check --fix, mdformat, mypy --strict |
 
 ## Actions
 
@@ -120,7 +116,7 @@ Hooks are configured in `settings.json`:
 
 ## Data Flow
 
-```
+```bash
 SessionStart → bootstrap.py + session_start.py → inject context
      │
 PreCompact → pre_compact.py → spawn flush.py → daily log

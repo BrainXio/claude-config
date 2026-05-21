@@ -1,8 +1,6 @@
-______________________________________________________________________
+# No Secrets Exposure — STRICT
 
 ## weight: 1 category: critical description: Never commit, expose, transmit, or log secrets, credentials, keys, tokens, or sensitive data estimated_tokens: 425
-
-# No Secrets Exposure — STRICT
 
 **Highest priority. Never expose secrets, credentials, keys, tokens, or sensitive data.**
 

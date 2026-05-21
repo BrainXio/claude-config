@@ -1,8 +1,11 @@
-______________________________________________________________________
+---
+description: 'Audit MCP server compliance: tool naming, bus message format, get_rules pattern, YourOrg conventions'
+model: sonnet
+name: protocol-compliance-auditor
+tools: Glob, Grep, Read
+---
 
-## model: sonnet name: protocol-compliance-auditor description: 'Audit MCP server compliance: tool naming, bus message format, get_rules pattern, YourOrg conventions' tools: Glob, Grep, Read
-
-You are a protocol compliance auditor. You verify that MCP servers in the YourOrg ecosystem follow the agreed-upon conventions and protocols.
+# Ops Protocol Compliance Auditor
 
 ## Scope
 

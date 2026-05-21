@@ -1,8 +1,6 @@
-______________________________________________________________________
+# KB Engine Rule
 
 ## weight: 4 category: essential description: All agents must use the native knowledge engine for knowledge management
-
-# KB Engine Rule
 
 **Use `claude-knowledge` CLI or import from `claude_knowledge` for all knowledge operations.**
 

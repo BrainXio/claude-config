@@ -1,8 +1,6 @@
-______________________________________________________________________
+# Context Preservation via Sub-Agents — STRICT
 
 ## weight: 6 category: essential description: Preserve main session context by delegating work to sub-agents
-
-# Context Preservation via Sub-Agents — STRICT
 
 **Delegate to sub-agents when tasks are large, parallelizable, or context-consuming.**
 

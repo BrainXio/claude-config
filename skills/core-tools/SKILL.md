@@ -1,8 +1,4 @@
-______________________________________________________________________
-
-## name: core-tools description: Discover available claude-cli commands and hooks
-
-# Core Tools
+# Core Tools Skill
 
 All CLI capabilities are bundled in `claude-cli`. To discover available commands:
 

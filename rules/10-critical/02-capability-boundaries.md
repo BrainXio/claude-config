@@ -1,8 +1,6 @@
-______________________________________________________________________
+# Capability Boundaries — STRICT
 
 ## weight: 2 category: critical description: Agents must not operate outside their declared hardware-determined capability threshold estimated_tokens: 325
-
-# Capability Boundaries — STRICT
 
 **Highest priority. Tier system is binding, not advisory. Hardware-gated at bootstrap.**
 

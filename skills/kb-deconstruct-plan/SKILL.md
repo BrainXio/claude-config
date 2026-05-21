@@ -1,8 +1,4 @@
-______________________________________________________________________
-
-## name: deconstruct-plan description: Deconstruct a master plan into atomic executable steps using R.D.P. ritual argument-hint: <master-plan-path> \[--repo <repo>\]
-
-# Deconstruct Plan
+# Deconstruct Plan Skill
 
 Execute the R.D.P. (Read/Deconstruct/Plan) ritual on a master plan document
 and output a deconstructed planning markdown to `~/.your-org/planning/<repo>/`.

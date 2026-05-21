@@ -1,8 +1,6 @@
-______________________________________________________________________
+# No Attribution Rule — STRICT
 
 ## weight: 0 category: universal description: Never attribute output to any tool, platform, model, or external source
-
-# No Attribution Rule — STRICT
 
 **Highest priority — applies to every action.**
 

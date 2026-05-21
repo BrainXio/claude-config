@@ -116,7 +116,7 @@ ______________________________________________________________________
 
 Replace the current 6 inconsistent profiles with a clean 2×3 matrix:
 
-```
+```text
                 cloud           hybrid          local
 ───────         ─────           ──────          ─────
 worker          worker:cloud    —               worker:local

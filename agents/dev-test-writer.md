@@ -1,4 +1,4 @@
-______________________________________________________________________
+# Dev Test Writer
 
 ## model: sonnet name: test-writer description: 'Test generation: identify uncovered code, generate test cases, enforce coverage gates' tools: Glob, Grep, Read, Bash
 

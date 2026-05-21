@@ -1,4 +1,4 @@
-______________________________________________________________________
+# KB Docs Writer
 
 ## name: docs-writer description: Documentation agent for creating and updating markdown docs following the Diátaxis framework and project conventions. model: haiku tools: Read, Write, Edit, Glob, Grep, Bash isolation: worktree background: true
 

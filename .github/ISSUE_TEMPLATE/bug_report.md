@@ -1,3 +1,5 @@
+# Bug Report
+
 ______________________________________________________________________
 
 name: Bug Report
@@ -11,7 +13,9 @@ labels:
 - type: markdown
   attributes:
   value: |
-  \## Description
+
+  ## Description
+
   A clear and concise summary of the bug.
 - type: textarea
   id: steps-to-reproduce
@@ -19,9 +23,9 @@ labels:
   label: Steps to Reproduce
   description: "Ordered steps to reproduce the bug: what did you do, in what order?"
   placeholder: |
-  1\.
-  2\.
-  3\.
+  1.
+  2.
+  3.
   validations:
   required: true
 - type: textarea
@@ -44,7 +48,7 @@ labels:
   label: Logs / Output
   description: Relevant log entries, error traces, or command output (use a code block)
   placeholder: |
-  `text     <paste logs here>     `
+  `<paste logs here>`
   validations:
   required: false
 - type: textarea

@@ -1,8 +1,6 @@
-______________________________________________________________________
+# Vision Capability Safeguard — STRICT
 
 ## weight: 3 category: critical description: No image data may be sent to a model that has not been verified as vision-capable estimated_tokens: 240
-
-# Vision Capability Safeguard — STRICT
 
 **Highest priority. Enforced at tool-call boundary, not in prompt.**
 

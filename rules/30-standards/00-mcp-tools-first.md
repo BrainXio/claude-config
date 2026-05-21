@@ -1,8 +1,6 @@
-______________________________________________________________________
+# MCP Tools First
 
 ## weight: 7 category: standards description: Use MCP tool interfaces for YourOrg services — raw file reads are fallback only
-
-# MCP Tools First
 
 **Use MCP tool interfaces for YourOrg services. Raw file reads are fallback-only.**
 

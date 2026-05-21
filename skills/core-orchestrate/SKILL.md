@@ -1,8 +1,4 @@
-______________________________________________________________________
-
-## name: orchestrate description: Decompose work into sub-agent tasks, dispatch by role, and aggregate results argument-hint: <work-description> | status | decompose <sprint-item> | dispatch <role> <task>
-
-# Orchestrate
+# Orchestrate Skill
 
 Decompose work into role-specific sub-agent tasks, dispatch them in parallel
 when possible, and aggregate results. The main session is the sole bus
@@ -36,7 +32,7 @@ definitions from `.claude/workflows/*.json`:
 | `train-model`       | `.claude/workflows/train-model.json`       | research → prep → train → eval → docs (tier-gated)       |
 | `document-only`     | `.claude/workflows/document-only.json`     | research → write → review → ship                         |
 
-```
+```bash
 /dispatch <workflow-name> [--stage <name>] [--dry-run]
 ```
 
@@ -74,7 +70,7 @@ The dispatch skill handles:
 
 For manual dispatch without the workflow runner:
 
-```
+```bash
 1. Research (Explore)          — parallel with everything
 2. Plan (Plan)                 — if architectural decisions needed
 3. Implement (coder-worker)    — sequential or parallel with worktrees
@@ -120,7 +116,7 @@ When a sub-agent fails (rate limit, error, poor results):
 | Low value, any cost         | Skip the task, post status on bus   |
 | Unknown value               | Evaluate against sprint priorities  |
 
-3. **Retry budget** — Maximum 2 retries per sub-agent task. After 2 failures:
+1. **Retry budget** — Maximum 2 retries per sub-agent task. After 2 failures:
 
    - If main session can do it: do it directly
    - If main session can't: escalate to HITL via bus decision
@@ -148,7 +144,7 @@ Use `claim_decision` on the bus to escalate.
 Sub-agent prompts follow a standard structure. Templates are in
 `.claude/skills/orchestrate/templates/`:
 
-```
+```text
 templates/
   implementer.md
   tester.md
@@ -174,17 +170,17 @@ Each template has these sections:
 Show current orchestration state: active sub-agents, pending work items,
 and dispatch recommendations.
 
-### decompose \<sprint-item>
+### decompose `<sprint-item>`
 
 Read the sprint item and decompose it into sub-agent tasks with role
 assignments, dependencies, and parallelism hints.
 
-### dispatch \<role> \<task>
+### dispatch `<role> <task>`
 
 Create a sub-agent prompt from the template and dispatch it via the Agent
 tool. The main session waits for the result.
 
-### \<work-description>
+### `<work-description>`
 
 Full orchestration cycle: decompose the work, dispatch sub-agents in
 dependency order, aggregate results, and commit.

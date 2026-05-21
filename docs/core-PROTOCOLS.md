@@ -7,7 +7,7 @@ bootstrapped and available at session start.
 
 Every session follows this exact sequence:
 
-```
+```text
 Step 1: SessionStart hook (automatic)
   └── claude-bootstrap: detect role, VRAM, profile → persist to state.json
   └── claude-session-start: flush daily log, check onboarding
@@ -63,7 +63,7 @@ After bootstrap and signin, verify that all required MCP servers are responsive:
 
 ### Verification Procedure
 
-```
+```text
 for each server in [required, optional]:
     try:
         response = call_verification_tool()
@@ -92,7 +92,7 @@ The main session provides context via the Agent tool prompt. The sub-agent
 writes `SUMMARY.md` on completion. The main session reads it via
 `inception-monitor report`.
 
-```
+```text
 ┌─────────────┐     prompt + context     ┌──────────────┐
 │  Main       │ ────────────────────────→ │  Sub-agent   │
 │  Session    │                           │  (worktree)  │
@@ -140,7 +140,7 @@ in restricted mode: read-only bus, no approvals, no meetings.
 
 ### Self-shutdown
 
-```
+```text
 Step 1: Post final status
   └── mcp__your-agent-bus__post_message()
   └── topic: agent-activity, type: status
@@ -164,7 +164,7 @@ Step 5: SessionEnd hook (automatic)
 When a session is stale (heartbeat >15 min old) and must be ended by another
 session:
 
-```
+```text
 Step 1: Confirm staleness
   └── mcp__your-agent-bus__reap_stale_heartbeats()
   └── Verify the session is in the reaped list

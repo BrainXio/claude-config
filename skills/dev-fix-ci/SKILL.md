@@ -1,8 +1,4 @@
-______________________________________________________________________
-
-## name: fix-ci description: Diagnose CI failures, apply fixes, and push with proper commit messages argument-hint: <error-source>
-
-# Fix CI
+# Fix CI Skill
 
 Resolve CI failures systematically with diagnosis, fix, verification, and proper commit.
 
