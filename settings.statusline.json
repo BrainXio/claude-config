@@ -1,0 +1,6 @@
+{
+  "statusLine": {
+    "type": "command",
+    "command": "uvx --from git+https://github.com/BrainXio/claude-cli.git claude-statusline"
+  }
+}

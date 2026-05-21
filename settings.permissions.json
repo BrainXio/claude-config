@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(~/.claude)",
+      "Write(~/.claude)"
+    ],
+    "deny": [
+      "Read(**/.env*)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)",
+      "Read(**/*.crt)",
+      "Read(**/*.p12)",
+      "Read(**/*.pfx)",
+      "Read(**/secrets/**)",
+      "Read(**/credentials/**)",
+      "Read(**/.aws/**)",
+      "Read(**/.ssh/vault/**)",
+      "Read(**/.gnupg/private-keys-v1.d/**)",
+      "Read(~/Library/Keychains/**)",
+      "Read(**/private/**)",
+      "Write(~/.ssh/vault/**)",
+      "Run(docker)",
+      "Run(docker-compose)",
+      "Run(podman)",
+      "Run(sudo)",
+      "Run(su)",
+      "Run(pkexec)",
+      "Run(doas)"
+    ]
+  }
+}
