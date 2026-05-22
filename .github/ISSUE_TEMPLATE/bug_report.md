@@ -10,6 +10,7 @@ labels:
 - bug
   assignees: ""
   body:
+
 - type: markdown
   attributes:
   value: |
@@ -17,17 +18,19 @@ labels:
   ## Description
 
   A clear and concise summary of the bug.
+
 - type: textarea
   id: steps-to-reproduce
   attributes:
   label: Steps to Reproduce
   description: "Ordered steps to reproduce the bug: what did you do, in what order?"
   placeholder: |
-  1.
-  2.
-  3.
+  1\.
+  2\.
+  3\.
   validations:
   required: true
+
 - type: textarea
   id: expected-behavior
   attributes:
@@ -35,6 +38,7 @@ labels:
   description: What should have happened instead of the bug?
   validations:
   required: true
+
 - type: textarea
   id: actual-behavior
   attributes:
@@ -42,6 +46,7 @@ labels:
   description: What actually happened? Include any error messages or unexpected outcomes.
   validations:
   required: true
+
 - type: textarea
   id: logs-output
   attributes:
@@ -51,6 +56,7 @@ labels:
   `<paste logs here>`
   validations:
   required: false
+
 - type: textarea
   id: possible-fix
   attributes:
@@ -58,6 +64,7 @@ labels:
   description: If you have an idea of what is causing the bug, describe it here.
   validations:
   required: false
+
 - type: textarea
   id: additional-context
   attributes:

@@ -1,13 +1,6 @@
----
-color: violet
-description: 'Detect documentation/config drift across multi-repo ecosystems: READMEs, tool tables, env vars, architecture docs'
-isolation: shared
-model: sonnet
-name: drift-detector
-permissionMode: read-only
-role: worker
-tools: Glob, Grep, Read
----
+______________________________________________________________________
+
+## color: violet description: 'Detect documentation/config drift across multi-repo ecosystems: READMEs, tool tables, env vars, architecture docs' isolation: shared model: sonnet name: drift-detector permissionMode: read-only role: worker tools: Glob, Grep, Read
 
 # KB Drift Detector
 
@@ -17,15 +10,15 @@ the multi-repo ecosystem to identify inconsistencies, outdated references, and a
 ## Workflow
 
 1. **Read drift detection request** - Understand the scope of repos and categories to analyze from task description or bus message
-2. **Gather baseline data** - Enumerate all MCP server repos and their documentation locations
-3. **Check README tool table drift** - Compare source decorators against documented tool tables
-4. **Check README structure drift** - Verify consistent section presence across all repos
-5. **Check env var drift** - Compare source environment variable usage against documentation
-6. **Check signature drift** - Verify parameter naming and types are consistent across repos
-7. **Check architecture doc drift** - Validate architecture docs against current source
-8. **Check cross-repo alignment** - Ensure tone and format consistency across ecosystem
-9. **Generate drift report** - Output findings in structured markdown format
-10. **Report completion** - Post status on agent-activity channel with findings and recommendations
+1. **Gather baseline data** - Enumerate all MCP server repos and their documentation locations
+1. **Check README tool table drift** - Compare source decorators against documented tool tables
+1. **Check README structure drift** - Verify consistent section presence across all repos
+1. **Check env var drift** - Compare source environment variable usage against documentation
+1. **Check signature drift** - Verify parameter naming and types are consistent across repos
+1. **Check architecture doc drift** - Validate architecture docs against current source
+1. **Check cross-repo alignment** - Ensure tone and format consistency across ecosystem
+1. **Generate drift report** - Output findings in structured markdown format
+1. **Report completion** - Post status on agent-activity channel with findings and recommendations
 
 ## Anti-patterns
 
