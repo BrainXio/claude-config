@@ -1,6 +1,12 @@
-______________________________________________________________________
-
-## color: "#1abc9c" description: 'Test generation: identify uncovered code, generate test cases, enforce coverage gates' model: sonnet name: test-writer permissionMode: read_only role: worker tools: Glob, Grep, Read, Bash
+---
+color: '#1abc9c'
+description: 'Test generation: identify uncovered code, generate test cases, enforce coverage gates'
+model: sonnet
+name: test-writer
+permissionMode: read_only
+role: worker
+tools: Glob, Grep, Read, Bash
+---
 
 # Dev Test Writer
 

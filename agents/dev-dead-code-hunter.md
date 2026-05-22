@@ -1,6 +1,14 @@
-______________________________________________________________________
-
-## background: true color: "#e74c3c" description: "Find dead code per OCD's No Dead Code standard: unused functions, variables, configs" isolation: worktree model: haiku name: dead-code-hunter permissionMode: read_only role: worker tools: Glob, Grep, Read
+---
+background: true
+color: '#e74c3c'
+description: "Find dead code per OCD's No Dead Code standard: unused functions, variables, configs"
+isolation: worktree
+model: haiku
+name: dead-code-hunter
+permissionMode: read_only
+role: worker
+tools: Glob, Grep, Read
+---
 
 # Dev Dead Code Hunter
 

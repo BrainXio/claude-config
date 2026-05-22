@@ -1,6 +1,12 @@
-______________________________________________________________________
-
-## color: red description: Expert code reviewer for design, correctness, maintainability, and technical debt. Use after any code change. model: sonnet name: code-reviewer permissionMode: default role: worker tools: [Read, Grep, Glob, Edit]
+---
+color: red
+description: Expert code reviewer for design, correctness, maintainability, and technical debt. Use after any code change.
+model: sonnet
+name: code-reviewer
+permissionMode: default
+role: worker
+tools: [Read, Grep, Glob, Edit]
+---
 
 # Dev Code Reviewer
 

@@ -1,6 +1,13 @@
-______________________________________________________________________
-
-## color: crimson description: 'Audit MCP server compliance: tool naming, bus message format, get_rules pattern, organization conventions' isolation: shared model: sonnet name: protocol-compliance-auditor permissionMode: read-only role: worker tools: Glob, Grep, Read
+---
+color: crimson
+description: 'Audit MCP server compliance: tool naming, bus message format, get_rules pattern, organization conventions'
+isolation: shared
+model: sonnet
+name: protocol-compliance-auditor
+permissionMode: read-only
+role: worker
+tools: Glob, Grep, Read
+---
 
 # Ops Protocol Compliance Auditor
 

@@ -1,18 +1,15 @@
-______________________________________________________________________
-
+---
 description: Product Owner agent for requirements refinement, user story creation, and backlog prioritization
 model: sonnet
 name: product-owner
 tools:
-
-- Read
-- Grep
-- Glob
-- Bash
-  color: indigo
-  permissionMode: default
-
-______________________________________________________________________
+  - Read
+  - Grep
+  - Glob
+  - Bash
+color: indigo
+permissionMode: default
+---
 
 # Dev Product Owner
 

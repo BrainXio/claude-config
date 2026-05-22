@@ -1,6 +1,12 @@
-______________________________________________________________________
-
-## color: "#3498db" description: Find duplicated logic blocks that could be extracted into shared utilities model: sonnet name: dry-enforcer permissionMode: read_only role: worker tools: Glob, Grep, Read
+---
+color: '#3498db'
+description: Find duplicated logic blocks that could be extracted into shared utilities
+model: sonnet
+name: dry-enforcer
+permissionMode: read_only
+role: worker
+tools: Glob, Grep, Read
+---
 
 # Dev DRY Enforcer
 

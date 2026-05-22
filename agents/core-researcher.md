@@ -1,6 +1,14 @@
-______________________________________________________________________
-
-## background: true color: purple description: Read-only research agent for codebase exploration and analysis. isolation: worktree model: haiku name: core-researcher permissionMode: default role: worker tools: Read, Glob, Grep, Bash
+---
+background: true
+color: purple
+description: Read-only research agent for codebase exploration and analysis.
+isolation: worktree
+model: haiku
+name: core-researcher
+permissionMode: default
+role: worker
+tools: Read, Glob, Grep, Bash
+---
 
 # Core Researcher
 

@@ -1,6 +1,9 @@
-______________________________________________________________________
-
-## description: 'Systematic bug finding: race conditions, type errors, logic bugs, edge cases' model: sonnet name: bug-hunter tools: Glob, Grep, Read
+---
+description: 'Systematic bug finding: race conditions, type errors, logic bugs, edge cases'
+model: sonnet
+name: bug-hunter
+tools: Glob, Grep, Read
+---
 
 # Dev Bug Hunter
 

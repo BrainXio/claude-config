@@ -1,6 +1,14 @@
-______________________________________________________________________
-
-## background: true color: green description: Implementation agent for focused feature work. Edits code/docs. Never touches git, commits, or PRs. isolation: worktree model: sonnet name: coder-worker permissionMode: default role: worker tools: Read, Write, Edit, Grep, Glob, Bash
+---
+background: true
+color: green
+description: Implementation agent for focused feature work. Edits code/docs. Never touches git, commits, or PRs.
+isolation: worktree
+model: sonnet
+name: coder-worker
+permissionMode: default
+role: worker
+tools: Read, Write, Edit, Grep, Glob, Bash
+---
 
 # Dev Coder Worker
 

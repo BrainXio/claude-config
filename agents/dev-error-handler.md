@@ -1,6 +1,14 @@
-______________________________________________________________________
-
-## background: true color: "#e67e22" description: Diagnose and fix CI, linting, and type checking errors from log output isolation: worktree model: sonnet name: error-handler permissionMode: read_write role: worker tools: Read, Write, Edit, Grep, Glob, Bash
+---
+background: true
+color: '#e67e22'
+description: Diagnose and fix CI, linting, and type checking errors from log output
+isolation: worktree
+model: sonnet
+name: error-handler
+permissionMode: read_write
+role: worker
+tools: Read, Write, Edit, Grep, Glob, Bash
+---
 
 # Dev Error Handler
 

@@ -1,6 +1,13 @@
-______________________________________________________________________
-
-## color: violet description: 'Detect documentation/config drift across multi-repo ecosystems: READMEs, tool tables, env vars, architecture docs' isolation: shared model: sonnet name: drift-detector permissionMode: read-only role: worker tools: Glob, Grep, Read
+---
+color: violet
+description: 'Detect documentation/config drift across multi-repo ecosystems: READMEs, tool tables, env vars, architecture docs'
+isolation: shared
+model: sonnet
+name: drift-detector
+permissionMode: read-only
+role: worker
+tools: Glob, Grep, Read
+---
 
 # KB Drift Detector
 

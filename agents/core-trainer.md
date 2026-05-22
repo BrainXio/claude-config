@@ -1,6 +1,13 @@
-______________________________________________________________________
-
-## color: orange description: ML model training and evaluation agent. Requires tier 4 capability. Use for fine-tuning, LoRA/QLoRA, and large-scale evaluation. isolation: worktree model: sonnet name: trainer permissionMode: default role: trainer tools: [Read, Write, Edit, Grep, Glob, Bash]
+---
+color: orange
+description: ML model training and evaluation agent. Requires tier 4 capability. Use for fine-tuning, LoRA/QLoRA, and large-scale evaluation.
+isolation: worktree
+model: sonnet
+name: trainer
+permissionMode: default
+role: trainer
+tools: [Read, Write, Edit, Grep, Glob, Bash]
+---
 
 # Core Trainer
 

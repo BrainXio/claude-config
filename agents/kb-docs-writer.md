@@ -1,6 +1,14 @@
-______________________________________________________________________
-
-## background: true color: indigo description: Documentation agent for creating and updating markdown docs following the Diataxis framework and project conventions. isolation: worktree model: haiku name: docs-writer permissionMode: read-write role: worker tools: [Read, Write, Edit, Glob, Grep, Bash]
+---
+background: true
+color: indigo
+description: Documentation agent for creating and updating markdown docs following the Diataxis framework and project conventions.
+isolation: worktree
+model: haiku
+name: docs-writer
+permissionMode: read-write
+role: worker
+tools: [Read, Write, Edit, Glob, Grep, Bash]
+---
 
 # KB Docs Writer
 

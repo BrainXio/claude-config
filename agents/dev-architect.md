@@ -1,18 +1,15 @@
-______________________________________________________________________
-
+---
 description: Tech Lead / Software Architect agent for high-level design decisions and architecture
 model: sonnet
 name: architect
 tools:
-
-- Read
-- Grep
-- Glob
-- Bash
-  color: purple
-  permissionMode: default
-
-______________________________________________________________________
+  - Read
+  - Grep
+  - Glob
+  - Bash
+color: purple
+permissionMode: default
+---
 
 # Dev Architect
 

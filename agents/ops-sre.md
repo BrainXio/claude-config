@@ -1,18 +1,15 @@
-______________________________________________________________________
-
+---
 description: DevOps / Site Reliability Engineer agent for CI/CD, deployments, observability, and operational reliability
 model: sonnet
 name: sre
 tools:
-
-- Read
-- Grep
-- Glob
-- Bash
-  color: cobalt
-  permissionMode: default
-
-______________________________________________________________________
+  - Read
+  - Grep
+  - Glob
+  - Bash
+color: cobalt
+permissionMode: default
+---
 
 # Ops SRE
 

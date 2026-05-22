@@ -1,6 +1,14 @@
-______________________________________________________________________
-
-## background: true color: "#9b59b6" description: Find duplicated constants, config values, and patterns that violate the Single Source of Truth standard isolation: worktree model: haiku name: single-source-auditor permissionMode: read_only role: worker tools: Glob, Grep, Read
+---
+background: true
+color: '#9b59b6'
+description: Find duplicated constants, config values, and patterns that violate the Single Source of Truth standard
+isolation: worktree
+model: haiku
+name: single-source-auditor
+permissionMode: read_only
+role: worker
+tools: Glob, Grep, Read
+---
 
 # Dev Single Source Auditor
 

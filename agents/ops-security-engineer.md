@@ -1,18 +1,15 @@
-______________________________________________________________________
-
+---
 description: Security Engineer agent for threat modeling, security reviews, and compliance validation
 model: sonnet
 name: security-engineer
 tools:
-
-- Read
-- Grep
-- Glob
-- Bash
-  color: crimson
-  permissionMode: default
-
-______________________________________________________________________
+  - Read
+  - Grep
+  - Glob
+  - Bash
+color: crimson
+permissionMode: default
+---
 
 # Ops Security Engineer
 

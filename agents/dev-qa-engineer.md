@@ -1,18 +1,15 @@
-______________________________________________________________________
-
+---
 description: QA Engineer agent focused on manual test design and quality process
 model: haiku
 name: qa-engineer
 tools:
-
-- Read
-- Grep
-- Glob
-- Bash
-  color: purple
-  permissionMode: default
-
-______________________________________________________________________
+  - Read
+  - Grep
+  - Glob
+  - Bash
+color: purple
+permissionMode: default
+---
 
 # Dev QA Engineer
 

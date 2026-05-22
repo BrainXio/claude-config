@@ -1,6 +1,13 @@
-______________________________________________________________________
-
-## color: slate description: Enforces boring operational standards in docs. Blocks manifesto content, phantom repo links, and philosophy in README.md, CONTRIBUTING.md, SECURITY.md files under .github/. isolation: shared model: haiku name: standards-guard permissionMode: read-only role: worker tools: [Read, Grep, Glob]
+---
+color: slate
+description: Enforces boring operational standards in docs. Blocks manifesto content, phantom repo links, and philosophy in README.md, CONTRIBUTING.md, SECURITY.md files under .github/.
+isolation: shared
+model: haiku
+name: standards-guard
+permissionMode: read-only
+role: worker
+tools: [Read, Grep, Glob]
+---
 
 # Ops Standards Guard
 

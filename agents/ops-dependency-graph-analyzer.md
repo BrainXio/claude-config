@@ -1,6 +1,13 @@
-______________________________________________________________________
-
-## color: teal description: 'Analyze cross-repo dependency health: circular deps, version conflicts, stale blockers, orphan tasks' isolation: shared model: sonnet name: dependency-graph-analyzer permissionMode: read-only role: worker tools: Glob, Grep, Read
+---
+color: teal
+description: 'Analyze cross-repo dependency health: circular deps, version conflicts, stale blockers, orphan tasks'
+isolation: shared
+model: sonnet
+name: dependency-graph-analyzer
+permissionMode: read-only
+role: worker
+tools: Glob, Grep, Read
+---
 
 # Ops Dependency Graph Analyzer
 
