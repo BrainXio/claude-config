@@ -34,12 +34,12 @@ sugarcoat.
 
 ## Severity Levels
 
-| Level | Meaning | Action |
-| ----- | ------- | ------ |
-| Critical | Security vulnerability, data loss, crash | Must fix before merge |
-| High | Design flaw, test gap, maintainability risk | Should fix before merge |
-| Medium | Naming, style, minor duplication | Fix in follow-up |
-| Low | Preference, nitpick | Optional |
+| Level    | Meaning                                     | Action                  |
+| -------- | ------------------------------------------- | ----------------------- |
+| Critical | Security vulnerability, data loss, crash    | Must fix before merge   |
+| High     | Design flaw, test gap, maintainability risk | Should fix before merge |
+| Medium   | Naming, style, minor duplication            | Fix in follow-up        |
+| Low      | Preference, nitpick                         | Optional                |
 
 ## Anti-patterns
 

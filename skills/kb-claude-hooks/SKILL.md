@@ -17,13 +17,13 @@ When configured, hooks run from the published `claude-cli` package.
 
 ## Hook Catalog
 
-| Command | Trigger | Purpose |
-| --- | --- | --- |
-| `claude-bootstrap` | SessionStart hook | Detect role, VRAM, profile; pull models; sync docs; write state |
-| `claude-session-start` | SessionStart hook | Inject mode, KB index, doc stats, daily log into session context |
-| `claude-session-end` | SessionEnd hook | Capture transcript, spawn flush process for memory extraction |
-| `claude-pre-compact` | PreCompact hook | Capture transcript before auto-compaction, spawn flush process |
-| `claude-flush` | Spawned by session-end/pre-compact | Write conversation context to daily log, trigger KB compilation |
+| Command                | Trigger                            | Purpose                                                          |
+| ---------------------- | ---------------------------------- | ---------------------------------------------------------------- |
+| `claude-bootstrap`     | SessionStart hook                  | Detect role, VRAM, profile; pull models; sync docs; write state  |
+| `claude-session-start` | SessionStart hook                  | Inject mode, KB index, doc stats, daily log into session context |
+| `claude-session-end`   | SessionEnd hook                    | Capture transcript, spawn flush process for memory extraction    |
+| `claude-pre-compact`   | PreCompact hook                    | Capture transcript before auto-compaction, spawn flush process   |
+| `claude-flush`         | Spawned by session-end/pre-compact | Write conversation context to daily log, trigger KB compilation  |
 
 ## Hook Details
 

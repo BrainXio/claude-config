@@ -1,6 +1,12 @@
-______________________________________________________________________
-
-## color: yellow description: Find over-engineered code: unused abstractions, premature generalizations, speculative features model: haiku name: yagni-auditor permissionMode: default role: worker tools: Glob, Grep, Read
+---
+color: yellow
+description: Find over-engineered code: unused abstractions, premature generalizations, speculative features
+model: haiku
+name: yagni-auditor
+permissionMode: default
+role: worker
+tools: Glob, Grep, Read
+---
 
 # Dev YAGNI Auditor
 

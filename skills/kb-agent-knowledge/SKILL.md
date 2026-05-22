@@ -5,37 +5,37 @@ ingest, compile, search, validate, and scan.
 
 ## Actions
 
-| Action | Argument | Description |
+| Action       | Argument             | Description                                                      |
 | ------------ | -------------------- | ---------------------------------------------------------------- |
-| `mode` | `<mode>` | Switch operational mode (developer/research/review/ops/personal) |
-| `get-mode` | — | Return current mode, thresholds, and available modes |
-| `ingest` | `[source]` | Ingest markdown files into cleaned KB artifacts |
-| `compile` | `[--all] [--file X]` | Compile daily logs into structured articles |
-| `query` | `<question>` | Search KB via TF-IDF with optional version filtering |
-| `validate` | — | Run all 6 structural validation checks |
-| `status` | — | KB health report with sync and lint counts |
-| `scan` | `[--dir DIR]` | Scan for prototype projects and produce shortlist |
-| `shortlist` | `[--domain X]` | Load prototype ingestion shortlist with optional filtering |
-| `rules` | — | Return structured KB rules and schema |
-| `create` | `<type> <title>` | Create a KB article with template scaffolding |
-| `stub` | `[--dry-run]` | Auto-stub all broken \[[wikilinks]\] in the KB |
-| `template` | `<type>` | Return article type template with section descriptions |
-| `inject` | `[target]` | Inject the KB Engine rule into target agent systems |
-| `inject-all` | — | Inject the KB Engine rule into all known agent systems |
+| `mode`       | `<mode>`             | Switch operational mode (developer/research/review/ops/personal) |
+| `get-mode`   | —                    | Return current mode, thresholds, and available modes             |
+| `ingest`     | `[source]`           | Ingest markdown files into cleaned KB artifacts                  |
+| `compile`    | `[--all] [--file X]` | Compile daily logs into structured articles                      |
+| `query`      | `<question>`         | Search KB via TF-IDF with optional version filtering             |
+| `validate`   | —                    | Run all 6 structural validation checks                           |
+| `status`     | —                    | KB health report with sync and lint counts                       |
+| `scan`       | `[--dir DIR]`        | Scan for prototype projects and produce shortlist                |
+| `shortlist`  | `[--domain X]`       | Load prototype ingestion shortlist with optional filtering       |
+| `rules`      | —                    | Return structured KB rules and schema                            |
+| `create`     | `<type> <title>`     | Create a KB article with template scaffolding                    |
+| `stub`       | `[--dry-run]`        | Auto-stub all broken \[[wikilinks]\] in the KB                   |
+| `template`   | `<type>`             | Return article type template with section descriptions           |
+| `inject`     | `[target]`           | Inject the KB Engine rule into target agent systems              |
+| `inject-all` | —                    | Inject the KB Engine rule into all known agent systems           |
 
 ## Targets for `inject`
 
-| Target | File path |
+| Target        | File path                                              |
 | ------------- | ------------------------------------------------------ |
-| `agents` | `AGENTS.md` |
-| `claude-code` | `.claude/rules/01-agent-knowledge.md` |
-| `windsurf` | `.windsurf/rules/agent-knowledge.md` |
-| `cursor` | `.cursor/rules/agent-knowledge.mdc` |
-| `copilot` | `.github/instructions/agent-knowledge.instructions.md` |
-| `continue` | `.continue/rules/agent-knowledge.md` |
-| `roo` | `.roo/rules/agent-knowledge.md` |
-| `kiro` | `.kiro/steering/agent-knowledge.md` |
-| `cline` | `.clinerules/agent-knowledge.md` |
+| `agents`      | `AGENTS.md`                                            |
+| `claude-code` | `.claude/rules/01-agent-knowledge.md`                  |
+| `windsurf`    | `.windsurf/rules/agent-knowledge.md`                   |
+| `cursor`      | `.cursor/rules/agent-knowledge.mdc`                    |
+| `copilot`     | `.github/instructions/agent-knowledge.instructions.md` |
+| `continue`    | `.continue/rules/agent-knowledge.md`                   |
+| `roo`         | `.roo/rules/agent-knowledge.md`                        |
+| `kiro`        | `.kiro/steering/agent-knowledge.md`                    |
+| `cline`       | `.clinerules/agent-knowledge.md`                       |
 
 ## Procedure
 

@@ -33,11 +33,11 @@ Run the workflow engine to load the workflow and produce an execution plan:
 python3 .claude/skills/dispatch/dispatch.py <workflow-name> [--dry-run] [--stage <name>] [--json]
 ```
 
-| Flag | Purpose |
+| Flag        | Purpose                                             |
 | ----------- | --------------------------------------------------- |
 | `--dry-run` | Show which stages would execute without dispatching |
-| `--stage` | Execute a single stage only |
-| `--json` | Output raw JSON plan for programmatic use |
+| `--stage`   | Execute a single stage only                         |
+| `--json`    | Output raw JSON plan for programmatic use           |
 
 The script reads `claude-workflows/<name>.json` and outputs the dispatch plan.
 Use this as the source of truth for all subsequent steps.
@@ -50,9 +50,9 @@ Read `claude-workflows/<name>.json`. Validate against the expected schema.
 
 For each stage, check `gate`:
 
-| Gate | Action |
+| Gate          | Action                                      |
 | ------------- | ------------------------------------------- |
-| `"always"` | Proceed unconditionally |
+| `"always"`    | Proceed unconditionally                     |
 | `"tier >= N"` | Proceed if current tier >= N, else fallback |
 
 When gate fails:
@@ -88,17 +88,17 @@ python3 .claude/skills/dispatch/dispatch.py <workflow-name> --json
 
 **Agent type mapping** (from workflow JSON `agent` field):
 
-| Workflow agent | `subagent_type` | Isolation |
+| Workflow agent | `subagent_type`            | Isolation |
 | -------------- | -------------------------- | --------- |
-| `Explore` | `Explore` | none |
-| `Plan` | `Plan` | none |
-| `coder-worker` | `coder-worker` | worktree |
-| `test-writer` | `test-writer` | none |
-| `bug-hunter` | `bug-hunter` | none |
-| `docs-writer` | `docs-writer` | worktree |
-| `code-audit` | multi-audit (7 sub-agents) | none |
-| `trainer` | `general-purpose` | worktree |
-| `ship-skill` | `general-purpose` | none |
+| `Explore`      | `Explore`                  | none      |
+| `Plan`         | `Plan`                     | none      |
+| `coder-worker` | `coder-worker`             | worktree  |
+| `test-writer`  | `test-writer`              | none      |
+| `bug-hunter`   | `bug-hunter`               | none      |
+| `docs-writer`  | `docs-writer`              | worktree  |
+| `code-audit`   | multi-audit (7 sub-agents) | none      |
+| `trainer`      | `general-purpose`          | worktree  |
+| `ship-skill`   | `general-purpose`          | none      |
 
 **Post progress** — update activity channel after each stage completion with status and deliverables.
 
@@ -144,12 +144,12 @@ re-running a failed stage without restarting the entire pipeline.
 
 ## Integration
 
-| System | Integration Point |
-| ------------------- | ---------------------------------------------------------------------------------- |
-| `orchestrate` skill | Calls dispatch for workflow loading and gate checking |
-| `bus` | Post progress on activity channel |
-| `dispatch.py` | Executable plan generator (reads workflow, outputs JSON or table) |
-| `claude-workflows` | Workflow definitions |
+| System              | Integration Point                                                 |
+| ------------------- | ----------------------------------------------------------------- |
+| `orchestrate` skill | Calls dispatch for workflow loading and gate checking             |
+| `bus`               | Post progress on activity channel                                 |
+| `dispatch.py`       | Executable plan generator (reads workflow, outputs JSON or table) |
+| `claude-workflows`  | Workflow definitions                                              |
 
 ## Related
 

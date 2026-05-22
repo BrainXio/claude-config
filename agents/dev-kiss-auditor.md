@@ -1,6 +1,12 @@
-______________________________________________________________________
-
-## color: green description: Find unnecessarily complex implementations that could be simpler model: sonnet name: kiss-auditor permissionMode: default role: worker tools: Glob, Grep, Read
+---
+color: green
+description: Find unnecessarily complex implementations that could be simpler
+model: sonnet
+name: kiss-auditor
+permissionMode: default
+role: worker
+tools: Glob, Grep, Read
+---
 
 # Dev KISS Auditor
 
