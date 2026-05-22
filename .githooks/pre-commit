@@ -1,8 +1,46 @@
 #!/usr/bin/env bash
-# Pre-commit hook for claude-config
-# Runs markdown/yaml linting and attribution guard.
+# Pre-commit hook for claude-config (multi-language starter template)
+# Universal checks + smart language detection using uvx and npx.
 set -euo pipefail
 
+echo "Running pre-commit checks for this repository..."
+
+staged_files=$(git diff --cached --name-only --diff-filter=ACM 2>/dev/null || true)
+if [ -z "$staged_files" ]; then
+  exit 0
+fi
+
+# ====================== UNIVERSAL CHECKS ======================
+
+# Markdown formatting
+if echo "$staged_files" | grep -qE '\.md$'; then
+  echo "Checking markdown formatting..."
+  echo "$staged_files" | grep -E '\.md$' | xargs -r \
+    uvx --with mdformat-frontmatter --with mdformat-gfm mdformat --check || {
+    echo "Fix with: uvx --with mdformat-frontmatter --with mdformat-gfm mdformat ."
+    exit 1
+  }
+fi
+
+# YAML linting
+if echo "$staged_files" | grep -qE '\.ya?ml$'; then
+  echo "Linting YAML files..."
+  echo "$staged_files" | grep -E '\.ya?ml$' | xargs -r \
+    uvx --from yamllint yamllint -c .yamllint || exit 1
+fi
+
+# JSON validation
+if echo "$staged_files" | grep -qE '\.json$'; then
+  echo "Validating JSON files..."
+  for file in $(echo "$staged_files" | grep -E '\.json$'); do
+    if ! uvx --from jq jq empty "$file" >/dev/null 2>&1; then
+      echo "Invalid JSON in $file"
+      exit 1
+    fi
+  done
+fi
+
+# Attribution guard (applies to all staged docs files)
 ATTRIBUTION_PATTERNS=(
   "[Cc]o-authored[- ]by"
   "[Gg]enerated[- ]by[- ]AI"
@@ -12,59 +50,113 @@ ATTRIBUTION_PATTERNS=(
   "GitHub[- ]Copilot"
 )
 
-staged_files=$(git diff --cached --name-only --diff-filter=ACM 2>/dev/null || true)
-if [ -z "$staged_files" ]; then
-  exit 0
-fi
+attribution_violations=0
+docs_to_check=$(echo "$staged_files" | grep -E '\.(md|yaml|yml|json)$' || true)
 
-echo "Running pre-commit checks for claude-config..."
-
-# --- Markdown checks ---
-md_files=$(echo "$staged_files" | grep -E '\.md$' || true)
-if [ -n "$md_files" ]; then
-  if command -v mdformat &>/dev/null; then
-    echo "Checking markdown formatting (mdformat)..."
-    echo "$md_files" | xargs -r mdformat --check || {
-      echo "Run 'mdformat' to fix markdown formatting."
-      exit 1
-    }
+for file in $docs_to_check; do
+  # Skip files that document the attribution rules themselves
+  case "$file" in
+    AGENTS.md|PLAN.md|SETUP-OLLAMA.md|rules/*) continue ;;
+  esac
+  content=$(git show ":$file" 2>/dev/null || true)
+  if [ -z "$content" ]; then
+    continue
   fi
+  for pattern in "${ATTRIBUTION_PATTERNS[@]}"; do
+    matches=$(echo "$content" | grep -inE "$pattern" 2>/dev/null || true)
+    if [ -n "$matches" ]; then
+      echo "ERROR: forbidden attribution pattern in $file:" >&2
+      echo "$matches" | head -5 >&2
+      attribution_violations=$((attribution_violations + 1))
+    fi
+  done
+done
+
+if [ "$attribution_violations" -gt 0 ]; then
+  echo "Attribution guard failed: $attribution_violations violation(s). Remove AI-generated attribution." >&2
+  exit 1
 fi
 
-# --- YAML checks ---
-yaml_files=$(echo "$staged_files" | grep -E '\.ya?ml$' || true)
-if [ -n "$yaml_files" ]; then
-  if command -v yamllint &>/dev/null; then
-    echo "Running yamllint..."
-    echo "$yaml_files" | xargs -r yamllint -c .yamllint || {
-      echo "Fix YAML linting errors before committing."
-      exit 1
-    }
-  fi
-fi
+# Standards guard (delegated to claude-cli, runs per staged docs file)
+if echo "$staged_files" | grep -qE '\.(md|ya?ml)$'; then
+  echo "Running standards guard..."
+  standards_violations=0
 
-# --- Attribution guard ---
-violations=0
-for file in README.md CONTRIBUTING.md SECURITY.md; do
-  if echo "$staged_files" | grep -qx "$file"; then
+  for file in $(echo "$staged_files" | grep -E '\.(md|ya?ml)$'); do
     content=$(git show ":$file" 2>/dev/null || true)
     if [ -z "$content" ]; then
       continue
     fi
-    for pattern in "${ATTRIBUTION_PATTERNS[@]}"; do
-      matches=$(echo "$content" | grep -inE "$pattern" 2>/dev/null || true)
-      if [ -n "$matches" ]; then
-        echo "ERROR: forbidden attribution pattern in $file:" >&2
-        echo "$matches" | head -5 >&2
-        violations=$((violations + 1))
-      fi
-    done
-  fi
-done
 
-if [ "$violations" -gt 0 ]; then
-  echo "Attribution guard: $violations violation(s) found. Remove AI attribution before committing." >&2
-  exit 1
+    guard_path="$file"
+    if [ "$(basename "$file")" = "README.md" ]; then
+      guard_path="repo/$file"
+    fi
+
+    payload=$(jq -n --arg fp "$guard_path" --arg ct "$content" '{"tool_name":"Write","tool_input":{"file_path":$fp,"content":$ct}}')
+    if ! result=$(echo "$payload" | uvx --from git+https://github.com/BrainXio/claude-cli.git claude-standards-guard 2>/dev/null); then
+      echo "WARNING: could not run claude-standards-guard for $file (skipping standards check)" >&2
+      continue
+    fi
+
+    if echo "$result" | grep -q '"permissionDecision": "deny"'; then
+      reason=$(echo "$result" | jq -r '.hookSpecificOutput.permissionDecisionReason // "Standards guard violation"' 2>/dev/null || echo "Standards guard violation")
+      echo "ERROR: $file: $reason" >&2
+      standards_violations=$((standards_violations + 1))
+    fi
+  done
+
+  if [ "$standards_violations" -gt 0 ]; then
+    echo "" >&2
+    echo "Standards guard failed: $standards_violations violation(s). Remove forbidden content before committing." >&2
+    exit 1
+  fi
+fi
+
+# ====================== LANGUAGE-SPECIFIC CHECKS ======================
+
+echo "Running language-specific checks..."
+
+# Python
+if [ -f "pyproject.toml" ] || echo "$staged_files" | grep -qE '\.py$'; then
+  echo "Python project detected"
+  if command -v uv >/dev/null; then
+    uv run ruff check --select I --fix --unsafe-fixes . || exit 1
+    uv run ruff format --check . || exit 1
+  else
+    uvx --from ruff ruff check --select I --fix --unsafe-fixes . || exit 1
+    uvx --from ruff ruff format --check . || exit 1
+  fi
+fi
+
+# Rust
+if [ -f "Cargo.toml" ] || echo "$staged_files" | grep -qE '\.rs$'; then
+  echo "Rust project detected"
+  cargo fmt --check || exit 1
+  cargo clippy -- -D warnings || exit 1
+fi
+
+# Go
+if [ -f "go.mod" ] || echo "$staged_files" | grep -qE '\.go$'; then
+  echo "Go project detected"
+  go fmt ./... || exit 1
+  go vet ./... || exit 1
+fi
+
+# JavaScript / TypeScript
+if [ -f "package.json" ] || echo "$staged_files" | grep -qE '\.(js|ts|jsx|tsx)$'; then
+  echo "JavaScript/TypeScript project detected"
+  if [ -f "package.json" ]; then
+    npx eslint . --fix --max-warnings=0 || exit 1
+    npx prettier --check . || exit 1
+  fi
+fi
+
+# Shell scripts
+if echo "$staged_files" | grep -qE '\.sh$'; then
+  echo "Shell scripts detected"
+  echo "$staged_files" | grep -E '\.sh$' | xargs -r \
+    uvx --from shellcheck shellcheck || exit 1
 fi
 
 echo "Pre-commit checks passed."

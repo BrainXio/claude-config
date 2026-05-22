@@ -21,13 +21,13 @@
       "Read(~/Library/Keychains/**)",
       "Read(**/private/**)",
       "Write(~/.ssh/vault/**)",
-      "Run(docker)",
-      "Run(docker-compose)",
-      "Run(podman)",
-      "Run(sudo)",
-      "Run(su)",
-      "Run(pkexec)",
-      "Run(doas)"
+      "Bash(docker: *)",
+      "Bash(docker-compose: *)",
+      "Bash(podman: *)",
+      "Bash(sudo: *)",
+      "Bash(su: *)",
+      "Bash(pkexec: *)",
+      "Bash(doas: *)"
     ]
   }
 }

@@ -1,0 +1,61 @@
+{
+  "workflow": "train-model",
+  "description": "ML training pipeline: research → prep → train → eval → docs",
+  "version": "1.0.0",
+  "stages": [
+    {
+      "name": "research",
+      "agent": "Explore",
+      "gate": "always",
+      "parallel": false,
+      "max_concurrent": 1,
+      "isolation": "none",
+      "fallback": "skip",
+      "output": "dataset and model research findings"
+    },
+    {
+      "name": "prep",
+      "agent": "coder-worker",
+      "gate": "always",
+      "parallel": false,
+      "max_concurrent": 1,
+      "isolation": "worktree",
+      "fallback": "main_session_direct",
+      "depends_on": ["research"],
+      "output": "dataset preparation and training scripts"
+    },
+    {
+      "name": "train",
+      "agent": "trainer",
+      "gate": "tier >= 4",
+      "parallel": false,
+      "max_concurrent": 1,
+      "isolation": "worktree",
+      "fallback": "escalate",
+      "depends_on": ["prep"],
+      "output": "trained model checkpoint"
+    },
+    {
+      "name": "eval",
+      "agent": "trainer",
+      "gate": "tier >= 4",
+      "parallel": false,
+      "max_concurrent": 1,
+      "isolation": "worktree",
+      "fallback": "escalate",
+      "depends_on": ["train"],
+      "output": "evaluation metrics and comparison report"
+    },
+    {
+      "name": "docs",
+      "agent": "docs-writer",
+      "gate": "always",
+      "parallel": false,
+      "max_concurrent": 1,
+      "isolation": "worktree",
+      "fallback": "skip",
+      "depends_on": ["eval"],
+      "output": "training documentation and model card"
+    }
+  ]
+}

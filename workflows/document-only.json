@@ -1,0 +1,50 @@
+{
+  "workflow": "document-only",
+  "description": "Documentation-only workflow: research → write → review → ship",
+  "version": "1.0.0",
+  "stages": [
+    {
+      "name": "research",
+      "agent": "Explore",
+      "gate": "always",
+      "parallel": false,
+      "max_concurrent": 1,
+      "isolation": "none",
+      "fallback": "skip",
+      "output": "relevant code locations and existing docs"
+    },
+    {
+      "name": "write",
+      "agent": "docs-writer",
+      "gate": "always",
+      "parallel": false,
+      "max_concurrent": 1,
+      "isolation": "worktree",
+      "fallback": "main_session_direct",
+      "depends_on": ["research"],
+      "output": "draft documentation in worktree"
+    },
+    {
+      "name": "review",
+      "agent": "bug-hunter",
+      "gate": "always",
+      "parallel": false,
+      "max_concurrent": 1,
+      "isolation": "none",
+      "fallback": "skip",
+      "depends_on": ["write"],
+      "output": "accuracy review and correction suggestions"
+    },
+    {
+      "name": "ship",
+      "agent": "ship-skill",
+      "gate": "always",
+      "parallel": false,
+      "max_concurrent": 1,
+      "isolation": "none",
+      "fallback": "main_session_direct",
+      "depends_on": ["review"],
+      "output": "PR created with documentation label"
+    }
+  ]
+}

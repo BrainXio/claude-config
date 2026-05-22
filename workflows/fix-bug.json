@@ -1,0 +1,50 @@
+{
+  "workflow": "fix-bug",
+  "description": "Bug fix pipeline: audit → implement → test → ship",
+  "version": "1.0.0",
+  "stages": [
+    {
+      "name": "audit",
+      "agent": "bug-hunter",
+      "gate": "always",
+      "parallel": false,
+      "max_concurrent": 1,
+      "isolation": "none",
+      "fallback": "skip",
+      "output": "bug diagnosis and root cause analysis"
+    },
+    {
+      "name": "implement",
+      "agent": "coder-worker",
+      "gate": "always",
+      "parallel": false,
+      "max_concurrent": 1,
+      "isolation": "worktree",
+      "fallback": "main_session_direct",
+      "depends_on": ["audit"],
+      "output": "bug fix in worktree"
+    },
+    {
+      "name": "test",
+      "agent": "test-writer",
+      "gate": "always",
+      "parallel": false,
+      "max_concurrent": 1,
+      "isolation": "none",
+      "fallback": "skip",
+      "depends_on": ["implement"],
+      "output": "regression test and coverage verification"
+    },
+    {
+      "name": "ship",
+      "agent": "ship-skill",
+      "gate": "always",
+      "parallel": false,
+      "max_concurrent": 1,
+      "isolation": "none",
+      "fallback": "main_session_direct",
+      "depends_on": ["test"],
+      "output": "PR created with bug-fix label"
+    }
+  ]
+}

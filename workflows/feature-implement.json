@@ -1,0 +1,92 @@
+{
+  "workflow": "feature-implement",
+  "description": "Full feature implementation pipeline: research → plan → implement → audit → test → docs → ship",
+  "version": "1.0.0",
+  "stages": [
+    {
+      "name": "research",
+      "agent": "Explore",
+      "gate": "always",
+      "parallel": false,
+      "max_concurrent": 1,
+      "isolation": "none",
+      "fallback": "skip",
+      "output": "research findings and file locations"
+    },
+    {
+      "name": "plan",
+      "agent": "Plan",
+      "gate": "always",
+      "parallel": false,
+      "max_concurrent": 1,
+      "isolation": "none",
+      "fallback": "skip",
+      "depends_on": ["research"],
+      "output": "implementation plan with file paths and dependency order"
+    },
+    {
+      "name": "implement",
+      "agent": "coder-worker",
+      "gate": "always",
+      "parallel": true,
+      "max_concurrent": 3,
+      "isolation": "worktree",
+      "fallback": "main_session_direct",
+      "depends_on": ["plan"],
+      "output": "code changes in worktrees"
+    },
+    {
+      "name": "audit",
+      "agent": "code-audit",
+      "gate": "always",
+      "parallel": true,
+      "max_concurrent": 7,
+      "isolation": "none",
+      "fallback": "skip",
+      "depends_on": ["implement"],
+      "sub_agents": [
+        "bug-hunter",
+        "complexity-reducer",
+        "dead-code-hunter",
+        "dry-enforcer",
+        "kiss-auditor",
+        "single-source-auditor",
+        "yagni-auditor"
+      ],
+      "output": "merged audit report with severity rankings"
+    },
+    {
+      "name": "test",
+      "agent": "test-writer",
+      "gate": "always",
+      "parallel": false,
+      "max_concurrent": 1,
+      "isolation": "none",
+      "fallback": "skip",
+      "depends_on": ["implement"],
+      "output": "test coverage analysis and gap report"
+    },
+    {
+      "name": "docs",
+      "agent": "docs-writer",
+      "gate": "always",
+      "parallel": true,
+      "max_concurrent": 1,
+      "isolation": "worktree",
+      "fallback": "skip",
+      "depends_on": ["implement"],
+      "output": "updated documentation"
+    },
+    {
+      "name": "ship",
+      "agent": "ship-skill",
+      "gate": "always",
+      "parallel": false,
+      "max_concurrent": 1,
+      "isolation": "none",
+      "fallback": "main_session_direct",
+      "depends_on": ["audit", "test", "docs"],
+      "output": "PR created with labels and CI monitoring"
+    }
+  ]
+}
