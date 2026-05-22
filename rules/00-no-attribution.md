@@ -1,3 +1,5 @@
+<!-- pre-commit: bypass-attribution -->
+
 # No Attribution Rule — STRICT
 
 ## weight: 0 category: universal description: Never attribute output to any tool, platform, model, or external source

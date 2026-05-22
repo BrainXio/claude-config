@@ -54,12 +54,12 @@ attribution_violations=0
 docs_to_check=$(echo "$staged_files" | grep -E '\.(md|yaml|yml|json)$' || true)
 
 for file in $docs_to_check; do
-  # Skip files that document the attribution rules themselves
-  case "$file" in
-    AGENTS.md|PLAN.md|SETUP-OLLAMA.md|rules/*) continue ;;
-  esac
   content=$(git show ":$file" 2>/dev/null || true)
   if [ -z "$content" ]; then
+    continue
+  fi
+  # Honor explicit bypass marker (e.g. in rule files that document patterns)
+  if echo "$content" | head -5 | grep -q "pre-commit: bypass-attribution"; then
     continue
   fi
   for pattern in "${ATTRIBUTION_PATTERNS[@]}"; do
