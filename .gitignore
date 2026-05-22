@@ -10,10 +10,12 @@
 !.mdformat.toml
 !.mcp.json
 !.yamllint
+!AGENTS.md
 !README.md
 !settings.json
 !settings.env.json
-!settings.env-ollama.json
+!settings.env-ollama-cloud.json
+!settings.env-ollama-local.json
 !settings.attribution.json
 !settings.core.json
 !settings.hooks.json
