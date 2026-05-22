@@ -14,26 +14,26 @@
 
 ## Required Types
 
-| Type | When to Use |
-| ---- | ----------- |
-| `feat` | New feature or capability |
-| `fix` | Bug fix |
-| `docs` | Documentation only changes |
-| `style` | Formatting, linting, whitespace (no code change) |
+| Type       | When to Use                                             |
+| ---------- | ------------------------------------------------------- |
+| `feat`     | New feature or capability                               |
+| `fix`      | Bug fix                                                 |
+| `docs`     | Documentation only changes                              |
+| `style`    | Formatting, linting, whitespace (no code change)        |
 | `refactor` | Code change that neither fixes a bug nor adds a feature |
-| `test` | Adding or updating tests |
-| `chore` | Maintenance, dependency updates, config changes |
-| `ci` | CI/CD pipeline changes |
-| `build` | Build system or external dependency changes |
-| `perf` | Performance improvement |
+| `test`     | Adding or updating tests                                |
+| `chore`    | Maintenance, dependency updates, config changes         |
+| `ci`       | CI/CD pipeline changes                                  |
+| `build`    | Build system or external dependency changes             |
+| `perf`     | Performance improvement                                 |
 
 ## Rules
 
 1. Type and description are mandatory
-2. Scope is optional but encouraged for cross-cutting changes
-3. Description must be lowercase, no trailing period
-4. Body is optional; use for breaking changes or non-obvious context
-5. Breaking changes must include `!` after type/scope or `BREAKING CHANGE:` footer
+1. Scope is optional but encouraged for cross-cutting changes
+1. Description must be lowercase, no trailing period
+1. Body is optional; use for breaking changes or non-obvious context
+1. Breaking changes must include `!` after type/scope or `BREAKING CHANGE:` footer
 
 ## Examples
 
