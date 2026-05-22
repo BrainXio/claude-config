@@ -35,5 +35,4 @@ cp -r rules/ agents/ skills/ docs/ settings.*.json /path/to/project/.claude/
 
 ## Related Repositories
 
-- `brainxio/claude-cli` — Lifecycle hooks and CLI entry points
-- `brainxio/claude-workflows` — JSON workflow definitions
+- `BrainXio/claude-cli` — Lifecycle hooks and CLI entry points
