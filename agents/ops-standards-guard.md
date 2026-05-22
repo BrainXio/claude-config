@@ -1,7 +1,11 @@
 ---
+color: slate
 description: Enforces boring operational standards in docs. Blocks manifesto content, phantom repo links, and philosophy in README.md, CONTRIBUTING.md, SECURITY.md files under .github/.
+isolation: shared
 model: haiku
 name: standards-guard
+permissionMode: read-only
+role: worker
 tools: [Read, Grep, Glob]
 ---
 
@@ -29,7 +33,6 @@ Report ALL instances of the following:
 - "quiet joy"
 - "Core approval"
 - "sacred" (when used as an adjective)
-- "Another Intelligence"
 - "sovereign AI"
 - "fun**ctional"
 - "becoming a proper idiot"
@@ -43,15 +46,15 @@ Report ALL instances of the following:
 
 ### Phantom Repo Links
 
-Any `your-org/*` or `YourOrg/*` link NOT in this verified list:
+Any `owner/*` or `Owner/*` link NOT in this verified list:
 
-- `your-org/.claude`
-- `your-org/.agents`
-- `your-org/.ollama`
-- `your-org/.containers`
-- `your-org/workflows`
-- `your-org/tools`
-- `your-org/.github`
+- `owner/.claude`
+- `owner/.agents`
+- `owner/.ollama`
+- `owner/.containers`
+- `owner/workflows`
+- `owner/tools`
+- `owner/.github`
 
 ### Workflow Sins (in .yml files)
 

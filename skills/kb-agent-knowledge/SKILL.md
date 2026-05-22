@@ -1,6 +1,6 @@
 # KB Engine Skill
 
-Interact with the `your-knowledge-engine` MCP server to manage the knowledge base:
+Interact with a {knowledge-mcp} MCP server to manage the knowledge base:
 ingest, compile, search, validate, and scan.
 
 ## Actions
@@ -40,7 +40,7 @@ ingest, compile, search, validate, and scan.
 ## Procedure
 
 1. Determine the action from the argument
-1. Invoke the corresponding MCP tool on the `your-knowledge-engine` server:
+1. Invoke the corresponding MCP tool on the {knowledge-mcp} server:
    - `mode <name>` → `set_mode` tool
    - `get-mode` → `get_mode` tool
    - `ingest` → `ingest` tool

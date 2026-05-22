@@ -1,25 +1,24 @@
 # MCP Tools First
 
-## weight: 7 category: standards description: Use MCP tool interfaces for YourOrg services — raw file reads are fallback only
+**Prefer MCP tool interfaces over raw file reads for well-known services.**
 
-**Use MCP tool interfaces for YourOrg services. Raw file reads are fallback-only.**
+## Principle
 
-## Services
+When a service is available through an MCP server, use its tools rather than reading raw files. MCP tools provide type-safe, version-aware interfaces that are less brittle than file path assumptions.
 
-| Service       | MCP Server              | Primary Tools                                                   |
-| ------------- | ----------------------- | --------------------------------------------------------------- |
-| Coordination  | `your-agent-bus`        | `signin`, `signout`, `post_message`, `send_message`, `poll_bus` |
-| Documentation | `your-agent-docs`       | `get_document`, `list_documents`                                |
-| Economy       | `your-agent-economy`    | `record_credit`, `record_debit`, `get_balance`, `get_ledger`    |
-| Knowledge     | `your-agent-knowledge`  | `query`, `ingest`, `compile`, `validate`, `status`              |
-| Security      | `your-agent-security`   | `pipeline_check`, `evaluate_tool_gate`, `log_security_event`    |
-| Thresholds    | `your-agent-thresholds` | `check_threshold`                                               |
-| Reading       | `your-agent-reader`     | `read_document`                                                 |
+## When This Applies
 
-## Forbidden
+- Documentation servers → prefer `get_document` over `cat`
+- Knowledge bases → prefer `query` over `grep`
+- Coordination/state → prefer the service's MCP interface over raw file reads
 
-- Never `cat`/`grep` the bus file — use `read_bus`/`poll_bus`
-- Never write to bus file — use `post_message`/`send_message`
-- Never `grep` knowledge articles — use `query`
-- Never `cat` docs — use `get_document`
-- Never check `state.json` for role — use `check_threshold`/`bootstrap`
+## When Raw Reads Are OK
+
+- Files that are the direct subject of the current task
+- Services with no MCP server configured
+- Debugging MCP server issues themselves
+
+## Enforcement
+
+- Prefer `Read` for task-relevant files, MCP tools for service queries
+- Never write directly to files managed by an MCP server

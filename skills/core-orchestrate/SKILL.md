@@ -101,7 +101,7 @@ The sub-agent delegate receives:
 
 When a sub-agent fails (rate limit, error, poor results):
 
-1. **Check economic value** — Use `agent_economy` to evaluate:
+1. **Check economic value** — Evaluate:
 
    - What was the expected value of this task?
    - What is the cost of retrying (tokens, time)?

@@ -1,4 +1,4 @@
-# BrainXio Claude Config
+# Claude Config
 
 Claude Code framework configuration: rules, agents, skills, and granular settings.
 

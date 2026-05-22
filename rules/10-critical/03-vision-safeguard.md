@@ -11,7 +11,7 @@ Doing so produces a deterministic 400 API error, wastes tokens, stalls the sessi
 
 ## Capability Source of Truth
 
-At SessionStart, `check-model-vision` writes to `~/.your-org/data/model-capabilities.json`.
+At SessionStart, `claude-check-model-vision` writes a capabilities file that agents must read before sending image data.
 Contains entries for all declared models + `__active__`. Each entry: `model`, `vision` (true/false/null), `ollama_model`.
 
 ## Agent Behavior
@@ -33,4 +33,4 @@ Never silently skip image input. Escalate to vision-capable model or request hum
 ## Enforcement
 
 - This rule is loaded after `00-human-sovereignty.md` and `00-capability-boundaries.md`.
-- Violations are logged as medium-severity economy errors via `record_error`.
+- Violations must be logged and reported to the user.

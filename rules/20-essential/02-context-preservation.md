@@ -9,7 +9,7 @@
 1. **Independent research** — audits, greps, doc searches not needing full context.
 1. **Parallel execution** — multiple files to edit or services to verify.
 1. **Lengthy tasks** — exceeding ~50% of context window or >10 tool calls.
-1. **Meeting attendance** — per Bus Coordination rule.
+1. **Meeting attendance** — per coordination rules.
 1. **Large outputs** — log parsing, bulk reads, data ingestion.
 
 ## Invariants
@@ -36,4 +36,4 @@
 ## Enforcement
 
 - This rule is loaded after `00-capability-boundaries.md` because sub-agent role gating is a prerequisite.
-- Violations (running large tasks in the main session context when a sub-agent was available) are logged as low-severity economy errors.
+- Violations (running large tasks in the main session context when a sub-agent was available) must be logged.
