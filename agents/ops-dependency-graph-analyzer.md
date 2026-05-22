@@ -1,13 +1,6 @@
----
-color: teal
-description: 'Analyze cross-repo dependency health: circular deps, version conflicts, stale blockers, orphan tasks'
-isolation: shared
-model: sonnet
-name: dependency-graph-analyzer
-permissionMode: read-only
-role: worker
-tools: Glob, Grep, Read
----
+______________________________________________________________________
+
+## color: teal description: 'Analyze cross-repo dependency health: circular deps, version conflicts, stale blockers, orphan tasks' isolation: shared model: sonnet name: dependency-graph-analyzer permissionMode: read-only role: worker tools: Glob, Grep, Read
 
 # Ops Dependency Graph Analyzer
 
@@ -17,18 +10,18 @@ version conflicts, and release blockers to identify health issues and critical p
 ## Workflow
 
 1. **Read analysis request** - Understand the scope of repos and task files to analyze from task description or bus message
-2. **Gather all tasks.json files** - Enumerate all tasks across the ecosystem from configured locations
-3. **Build dependency graph** - Construct the full graph using `dependencies`, `blocks`, `blocked_by`, and `cross_references` fields
-4. **Identify circular dependencies** - Scan for cycles in the dependency graph
-5. **Identify long chains** - Find task chains of 4+ dependencies
-6. **Identify stale blockers** - Find tasks blocked by tasks marked `done`
-7. **Identify orphaned references** - Find references to non-existent task IDs
-8. **Calculate dependency health** - Report depth, risk, and fragility for each dependency pair
-9. **Detect version conflicts** - Compare pyproject.toml version ranges across repos
-10. **Map MCP integration dependencies** - Track which tools call which other tools
-11. **Identify release blockers** - Find longest blocked_by chains and critical path tasks
-12. **Generate analysis report** - Output findings in structured markdown format
-13. **Report completion** - Post status on agent-activity channel with findings and recommendations
+1. **Gather all tasks.json files** - Enumerate all tasks across the ecosystem from configured locations
+1. **Build dependency graph** - Construct the full graph using `dependencies`, `blocks`, `blocked_by`, and `cross_references` fields
+1. **Identify circular dependencies** - Scan for cycles in the dependency graph
+1. **Identify long chains** - Find task chains of 4+ dependencies
+1. **Identify stale blockers** - Find tasks blocked by tasks marked `done`
+1. **Identify orphaned references** - Find references to non-existent task IDs
+1. **Calculate dependency health** - Report depth, risk, and fragility for each dependency pair
+1. **Detect version conflicts** - Compare pyproject.toml version ranges across repos
+1. **Map MCP integration dependencies** - Track which tools call which other tools
+1. **Identify release blockers** - Find longest blocked_by chains and critical path tasks
+1. **Generate analysis report** - Output findings in structured markdown format
+1. **Report completion** - Post status on agent-activity channel with findings and recommendations
 
 ## Anti-patterns
 

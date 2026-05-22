@@ -1,13 +1,6 @@
----
-color: slate
-description: Enforces boring operational standards in docs. Blocks manifesto content, phantom repo links, and philosophy in README.md, CONTRIBUTING.md, SECURITY.md files under .github/.
-isolation: shared
-model: haiku
-name: standards-guard
-permissionMode: read-only
-role: worker
-tools: [Read, Grep, Glob]
----
+______________________________________________________________________
+
+## color: slate description: Enforces boring operational standards in docs. Blocks manifesto content, phantom repo links, and philosophy in README.md, CONTRIBUTING.md, SECURITY.md files under .github/. isolation: shared model: haiku name: standards-guard permissionMode: read-only role: worker tools: [Read, Grep, Glob]
 
 # Ops Standards Guard
 
@@ -34,7 +27,7 @@ Report ALL instances of the following:
 - "Core approval"
 - "sacred" (when used as an adjective)
 - "sovereign AI"
-- "fun**ctional"
+- "fun\*\*ctional"
 - "becoming a proper idiot"
 - "restless mirror of curiosity"
 

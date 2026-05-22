@@ -1,9 +1,6 @@
----
-description: Flag high-cyclomatic-complexity functions and suggest simplifications
-model: sonnet
-name: complexity-reducer
-tools: Glob, Grep, Read
----
+______________________________________________________________________
+
+## description: Flag high-cyclomatic-complexity functions and suggest simplifications model: sonnet name: complexity-reducer tools: Glob, Grep, Read
 
 # Dev Complexity Reducer
 

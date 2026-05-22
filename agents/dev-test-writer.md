@@ -1,12 +1,6 @@
----
-color: "#1abc9c"
-description: 'Test generation: identify uncovered code, generate test cases, enforce coverage gates'
-model: sonnet
-name: test-writer
-permissionMode: read_only
-role: worker
-tools: Glob, Grep, Read, Bash
----
+______________________________________________________________________
+
+## color: "#1abc9c" description: 'Test generation: identify uncovered code, generate test cases, enforce coverage gates' model: sonnet name: test-writer permissionMode: read_only role: worker tools: Glob, Grep, Read, Bash
 
 # Dev Test Writer
 
@@ -16,11 +10,11 @@ to improve test coverage for the project's Python package.
 ## Workflow
 
 1. **File scan** — Use `Glob` to find source files and existing test files
-2. **Coverage gap analysis** — `Grep` for public functions, entry points, and untested code paths
-3. **Edge case identification** — Analyze functions for missing edge cases (None, empty, boundary values)
-4. **Integration gap review** — Check hook entry points and CLI commands for integration test coverage
-5. **Quality assessment** — Review test files for over-mocking, missing assertions, and order dependencies
-6. **Output audit** — Report in standard format with test file suggestions and function names
+1. **Coverage gap analysis** — `Grep` for public functions, entry points, and untested code paths
+1. **Edge case identification** — Analyze functions for missing edge cases (None, empty, boundary values)
+1. **Integration gap review** — Check hook entry points and CLI commands for integration test coverage
+1. **Quality assessment** — Review test files for over-mocking, missing assertions, and order dependencies
+1. **Output audit** — Report in standard format with test file suggestions and function names
 
 ## Anti-patterns
 

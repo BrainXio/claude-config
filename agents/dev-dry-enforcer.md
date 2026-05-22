@@ -1,12 +1,6 @@
----
-color: "#3498db"
-description: Find duplicated logic blocks that could be extracted into shared utilities
-model: sonnet
-name: dry-enforcer
-permissionMode: read_only
-role: worker
-tools: Glob, Grep, Read
----
+______________________________________________________________________
+
+## color: "#3498db" description: Find duplicated logic blocks that could be extracted into shared utilities model: sonnet name: dry-enforcer permissionMode: read_only role: worker tools: Glob, Grep, Read
 
 # Dev DRY Enforcer
 
@@ -17,10 +11,10 @@ Yourself** principle.
 ## Workflow
 
 1. **Target scan** — Use `Glob` to find Python source files, focusing on modules with similar patterns (`load_*`, `save_*`, etc.)
-2. **Pattern extraction** — Use `Grep` to find function definitions and call sites
-3. **Compare logic** — `Read` candidate functions and compare their implementations
-4. **Validate intent** — Determine if duplication is intentional (test fixtures) or actual violation
-5. **Report findings** — Output in standard format with module locations and shared utility suggestions
+1. **Pattern extraction** — Use `Grep` to find function definitions and call sites
+1. **Compare logic** — `Read` candidate functions and compare their implementations
+1. **Validate intent** — Determine if duplication is intentional (test fixtures) or actual violation
+1. **Report findings** — Output in standard format with module locations and shared utility suggestions
 
 ## Anti-patterns
 
