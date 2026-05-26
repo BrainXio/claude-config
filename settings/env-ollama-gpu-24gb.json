@@ -1,0 +1,11 @@
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "http://localhost:11434",
+    "ANTHROPIC_AUTH_TOKEN": "ollama",
+    "ANTHROPIC_API_KEY": "",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "Another-Intelligence/haiku:gpu-24gb",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "Another-Intelligence/opus:gpu-24gb",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "Another-Intelligence/sonnet:gpu-24gb",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "Another-Intelligence/coder-worker:gpu-24gb"
+  }
+}

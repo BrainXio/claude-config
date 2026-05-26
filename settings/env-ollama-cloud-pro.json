@@ -1,0 +1,11 @@
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "http://localhost:11434",
+    "ANTHROPIC_AUTH_TOKEN": "ollama",
+    "ANTHROPIC_API_KEY": "",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "Another-Intelligence/haiku:cloud-pro",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "Another-Intelligence/opus:cloud-pro",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "Another-Intelligence/sonnet:cloud-pro",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "Another-Intelligence/coder-worker:cloud-pro"
+  }
+}
