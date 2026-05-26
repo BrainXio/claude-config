@@ -33,6 +33,16 @@ Copy or symlink into `.claude/` in a project workspace:
 cp -r rules/ agents/ skills/ docs/ settings.*.json /path/to/project/.claude/
 ```
 
+## Contributing
+
+See BrainXio/.github/CONTRIBUTING.md for commit style, PR requirements, and organization-wide conventions.
+
+For claude-config specifically:
+
+- Rules, agents, and skills use YAML frontmatter followed by markdown body
+- Settings files compose: `settings.core.json` is the base, others layer on top
+- Run `uvx --with mdformat-frontmatter --with mdformat-gfm mdformat --check .` before committing
+
 ## Related Repositories
 
 - `BrainXio/claude-cli` — Lifecycle hooks and CLI entry points
