@@ -38,6 +38,17 @@ The MCP server is configured in `.mcp.json`:
 
 **Note:** For generating `.drawio` XML files directly, follow the XML generation guidelines below. The MCP server is best for preview and iteration.
 
+### Output Location Constraint
+
+**All diagrams MUST be saved to `docs/diagrams/` subdirectories:**
+
+- `docs/diagrams/architecture/` — Architecture diagrams
+- `docs/diagrams/flowcharts/` — Flowcharts
+- `docs/diagrams/sequence/` — Sequence diagrams
+- `docs/diagrams/misc/` — Other diagrams
+
+**Never save `.drawio` files outside `docs/diagrams/`.** The MCP server will output diagram content — you are responsible for saving it to the correct location.
+
 ## XML Structure Reference
 
 DrawIO uses XML format. **Always generate uncompressed XML** — never use compressed content.
