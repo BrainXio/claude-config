@@ -1,0 +1,11 @@
+{
+  "mcp": {
+    "time": {
+      "tools": {
+        "get_current_time": "allowed",
+        "convert_time": "allowed",
+        "get_timezone": "allowed"
+      }
+    }
+  }
+}

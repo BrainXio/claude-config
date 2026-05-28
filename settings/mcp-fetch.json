@@ -1,0 +1,10 @@
+{
+  "mcp": {
+    "fetch": {
+      "tools": {
+        "fetch": "allowed",
+        "get_markdown": "allowed"
+      }
+    }
+  }
+}

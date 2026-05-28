@@ -1,0 +1,17 @@
+{
+  "mcp": {
+    "filesystem": {
+      "tools": {
+        "read_file": "allowed",
+        "read_multiple_files": "allowed",
+        "write_file": "allowed",
+        "edit_file": "allowed",
+        "create_directory": "allowed",
+        "list_directory": "allowed",
+        "move_file": "allowed",
+        "search_files": "allowed",
+        "get_file_info": "allowed"
+      }
+    }
+  }
+}
