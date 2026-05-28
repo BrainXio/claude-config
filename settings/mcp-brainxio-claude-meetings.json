@@ -36,6 +36,12 @@
           "get_meeting_strategy": "allowed",
           "list_meeting_roles": "allowed",
           "get_role_definition": "allowed"
+        },
+        "chatroom": {
+          "chatroom_post": "allowed",
+          "chatroom_read": "allowed",
+          "chatroom_stats": "allowed",
+          "chatroom_info": "allowed"
         }
       }
     }
