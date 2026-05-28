@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "autoMemoryEnabled": true,
+  "awaySummaryEnabled": true,
+  "cleanupPeriodDays": 30,
+  "env": {
+    "ANTHROPIC_API_KEY": "",
+    "ANTHROPIC_AUTH_TOKEN": "ollama",
+    "ANTHROPIC_BASE_URL": "http://localhost:11434",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "Another-Intelligence/haiku:cloud-max",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "Another-Intelligence/opus:cloud-max",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "Another-Intelligence/sonnet:cloud-max",
+    "ANTHROPIC_LOG": "error",
+    "BASH_DEFAULT_TIMEOUT_MS": "300000",
+    "CLAUDE_CODE_ALWAYS_ENABLE_EFFORT": "1",
+    "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "0",
+    "CLAUDE_CODE_DISABLE_AUTO_MEMORY": "0",
+    "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",
+    "CLAUDE_CODE_DISABLE_GIT_INSTRUCTIONS": "0",
+    "CLAUDE_CODE_DISABLE_MOUSE": "0",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+    "CLAUDE_CODE_DISABLE_NONSTREAMING_FALLBACK": "0",
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "Another-Intelligence/coder-worker:cloud-max",
+    "DISABLE_AUTOUPDATER": "1",
+    "DISABLE_ERROR_REPORTING": "1",
+    "DISABLE_FEEDBACK_COMMAND": "1",
+    "DISABLE_PROMPT_CACHING_SONNET": "0",
+    "DISABLE_TELEMETRY": "1",
+    "DISABLE_UPDATES": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Read(~/.claude)",
+      "Write(~/.claude)",
+      "Read(./.claude)",
+      "Read(~/.config/claude)"
+    ],
+    "deny": [
+      "Read(**/.env*)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)",
+      "Read(**/*.crt)",
+      "Read(**/secrets/**)",
+      "Read(**/credentials/**)",
+      "Read(**/.aws/**)",
+      "Read(**/.ssh/vault/**)",
+      "Read(**/.gnupg/private-keys-v1.d/**)",
+      "Read(~/Library/Keychains/**)",
+      "Read(**/private/**)",
+      "Write(~/.ssh/vault/**)",
+      "Bash(docker: *)",
+      "Bash(docker-compose: *)",
+      "Bash(podman: *)",
+      "Bash(sudo: *)",
+      "Bash(su: *)",
+      "Bash(pkexec: *)",
+      "Bash(doas: *)"
+    ]
+  },
+  "sandbox": {
+    "enabled": false,
+    "autoAllowBashIfSandboxed": true,
+    "allowUnsandboxedCommands": true,
+    "excludedCommands": ["ssh", "gpg", "gpg2", "gh", "docker", "docker-compose", "podman", "sudo", "su", "pkexec", "doas"],
+    "filesystem": {
+      "allowRead": [".", "~/.claude", "/tmp"],
+      "denyRead": ["~/.ssh/vault/**", "~/.aws", "~/.netrc", "~/.kube", "~/.docker", "~/.npm", "~/.yarn", "~/.cache/pip", "~/.config/gh/hosts.yml", "**/.env*", "**/secrets/**", "**/credentials/**", "**/private/**"]
+    }
+  },
+  "skills": {
+    "enabled": false,
+    "note": "Skills disabled for 8B models. Load on-demand via /skill command."
+  },
+  "hooks": {
+    "SessionStart": [
+      "uvx --from git+https://github.com/BrainXio/claude-cli.git claude-bootstrap",
+      "uvx --from git+https://github.com/BrainXio/claude-cli.git claude-session-start",
+      "uvx --from git+https://github.com/BrainXio/claude-cli.git claude-check-model-vision"
+    ],
+    "SessionEnd": ["uvx --from git+https://github.com/BrainXio/claude-cli.git claude-session-end"],
+    "PreCompact": ["uvx --from git+https://github.com/BrainXio/claude-cli.git claude-pre-compact"],
+    "PreToolUse": ["uvx --from git+https://github.com/BrainXio/claude-cli.git claude-standards-guard"]
+  }
+}
