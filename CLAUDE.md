@@ -9,7 +9,7 @@ Claude Code framework configuration — rules, agents, skills, workflows merged 
 | `agents/`    | Sub-agent definitions (YAML frontmatter + prompt)                            | 22    |
 | `rules/`     | Hierarchical rules: `00-*`, `10-critical/`, `20-essential/`, `30-standards/` | 15    |
 | `skills/`    | Slash-command skills                                                         | 10    |
-| `settings/`  | Composable settings JSON files                                               | 12    |
+| `settings/`  | Composable settings JSON files                                               | 21    |
 | `workflows/` | Multi-stage agent pipeline JSON                                              | —     |
 | `decisions/` | Architecture Decision Records (ADRs)                                         | —     |
 
