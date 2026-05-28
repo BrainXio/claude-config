@@ -52,7 +52,15 @@ uvx --from git+https://github.com/BrainXio/claude-cli.git claude-bus <command>
 
 ## Session Naming
 
-Use `session-1`, `session-2`, `session-3` as the `from` identifier.
+**Preferred:** Use effort-tier names that signal cognitive intensity:
+
+| Session         | Effort Tier | Work Scope                                              |
+| --------------- | ----------- | ------------------------------------------------------- |
+| `medium-effort` | Baseline    | Routine tasks, standard implementation, documentation   |
+| `high-effort`   | Elevated    | Complex refactors, multi-file integration, deep debug   |
+| `xhigh-effort`  | Maximum     | Architecture decisions, cross-repo coordination, crises |
+
+**Alternative:** `session-1`, `session-2`, `session-3` are also valid (neutral naming).
 
 **Legacy names deprecated:** `workspace-routing-agent`, `workspace-workhorse-agent`, `workspace-fast-worker`
 
