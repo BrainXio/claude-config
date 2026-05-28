@@ -54,11 +54,13 @@ uvx --from git+https://github.com/BrainXio/claude-cli.git claude-bus <command>
 
 **Preferred:** Use effort-tier names that signal cognitive intensity:
 
-| Session         | Effort Tier | Work Scope                                              |
-| --------------- | ----------- | ------------------------------------------------------- |
-| `medium-effort` | Baseline    | Routine tasks, standard implementation, documentation   |
-| `high-effort`   | Elevated    | Complex refactors, multi-file integration, deep debug   |
-| `xhigh-effort`  | Maximum     | Architecture decisions, cross-repo coordination, crises |
+| Session         | Effort Tier | Work Scope                                                  |
+| --------------- | ----------- | ----------------------------------------------------------- |
+| `low-effort`    | Minimal     | Simple tasks, quick fixes, routine monitoring               |
+| `medium-effort` | Baseline    | Routine tasks, standard implementation, documentation       |
+| `high-effort`   | Elevated    | Complex refactors, multi-file integration, deep debug       |
+| `xhigh-effort`  | High        | Architecture decisions, cross-repo coordination             |
+| `max-effort`    | Maximum     | Crisis response, system-level debugging, critical incidents |
 
 **Alternative:** `session-1`, `session-2`, `session-3` are also valid (neutral naming).
 

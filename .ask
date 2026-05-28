@@ -1,0 +1,16 @@
+User requested: stage and commit the settings.hooks.json changes with a clean commit message, but NOT push.
+
+Changes made:
+- settings.hooks.json: Updated all hook commands to use uvx --from git+https://github.com/BrainXio/claude-cli.git <command> syntax
+- PreToolUse timeout: increased from 10 to 30 seconds
+
+Commands updated:
+1. claude-bootstrap -> uvx --from git+https://github.com/BrainXio/claude-cli.git claude-bootstrap
+2. claude-session-start -> uvx --from git+https://github.com/BrainXio/claude-cli.git claude-session-start
+3. bash ${workspaceFolder}/claude-cli/bin/check-model-vision -> uvx --from git+https://github.com/BrainXio/claude-cli.git claude-check-model-vision
+4. claude-pre-compact -> uvx --from git+https://github.com/BrainXio/claude-cli.git claude-pre-compact
+5. claude-session-end -> uvx --from git+https://github.com/BrainXio/claude-cli.git claude-session-end
+6. claude-standards-guard -> uvx --from git+https://github.com/BrainXio/claude-cli.git claude-standards-guard
+7. PreToolUse timeout: 10 -> 30
+
+Please approve: Stage and commit these changes with a descriptive commit message.

@@ -57,13 +57,13 @@ We'll mark this as `needs-reproduction` until we can reproduce locally.
 
 ### Step 4: Route to Owner
 
-| Component     | Owner                     | Label             |
-| ------------- | ------------------------- | ----------------- |
-| claude-cli    | workspace-fast-worker     | `area:cli`        |
-| claude-config | workspace-routing-agent   | `area:config`     |
-| agents-core   | workspace-workhorse-agent | `area:core`       |
-| bus tool      | workspace-fast-worker     | `area:bus`        |
-| model-tool    | TBD                       | `area:model-tool` |
+| Component     | Owner         | Label             |
+| ------------- | ------------- | ----------------- |
+| claude-cli    | low-effort    | `area:cli`        |
+| claude-config | medium-effort | `area:config`     |
+| agents-core   | high-effort   | `area:core`       |
+| bus tool      | low-effort    | `area:bus`        |
+| model-tool    | TBD           | `area:model-tool` |
 
 ### Step 5: Update Project Board
 

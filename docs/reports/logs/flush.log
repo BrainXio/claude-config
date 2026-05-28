@@ -1,0 +1,2 @@
+2026-05-28 03:40:53 INFO [pre_compact] PreCompact fired: session=80901b0f-632a-4d9a-bf41-dc7103894cf3
+2026-05-28 03:40:53 INFO [pre_compact] Spawned flush.py for session 80901b0f-632a-4d9a-bf41-dc7103894cf3 (30 turns, 9148 chars)
