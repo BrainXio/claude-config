@@ -1,12 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "mcp__brainxio-claude-hiring",
-      "mcp__brainxio-claude-meetings",
-      "mcp__filesystem",
-      "mcp__sequential-thinking",
-      "mcp__time",
-      "mcp__fetch"
+      "Read(~/.claude)",
+      "Write(~/.claude)",
+      "Read(./.claude)",
+      "Read(~/.config/claude)",
+      "Bash(uv run claude-bus *)"
     ],
     "deny": [
       "Read(**/.env*)",

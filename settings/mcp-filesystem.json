@@ -13,5 +13,10 @@
         "get_file_info": "allowed"
       }
     }
+  },
+  "permissions": {
+    "allow": [
+      "mcp__filesystem"
+    ]
   }
 }

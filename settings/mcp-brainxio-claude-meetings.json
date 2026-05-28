@@ -39,5 +39,10 @@
         }
       }
     }
+  },
+  "permissions": {
+    "allow": [
+      "mcp__brainxio-claude-meetings"
+    ]
   }
 }

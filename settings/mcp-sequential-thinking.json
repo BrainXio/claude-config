@@ -5,5 +5,10 @@
         "sequentialthinking": "allowed"
       }
     }
+  },
+  "permissions": {
+    "allow": [
+      "mcp__sequential-thinking"
+    ]
   }
 }

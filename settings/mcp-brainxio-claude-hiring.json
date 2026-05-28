@@ -26,5 +26,10 @@
         }
       }
     }
+  },
+  "permissions": {
+    "allow": [
+      "mcp__brainxio-claude-hiring"
+    ]
   }
 }
