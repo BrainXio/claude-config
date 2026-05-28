@@ -1,0 +1,107 @@
+{
+  "enabledMcpjsonServers": [
+    "brainxio-agent-relations",
+    "brainxio-claude-hiring",
+    "brainxio-claude-meetings",
+    "filesystem",
+    "sequential-thinking",
+    "time",
+    "fetch"
+  ],
+  "mcp": {
+    "brainxio-agent-relations": {
+      "tools": {
+        "offerings": {
+          "list_requirements": "allowed",
+          "assess_candidate": "allowed",
+          "draft_contract": "allowed",
+          "create_contract": "allowed",
+          "list_contracts": "allowed",
+          "get_contract": "allowed",
+          "close_contract": "allowed",
+          "evaluate_proof": "allowed"
+        },
+        "applicants": {
+          "list_skills": "allowed",
+          "get_skill_definition": "allowed",
+          "submit_proof": "allowed",
+          "get_portfolio": "allowed",
+          "verify_own_skills": "allowed",
+          "register_skill_attempt": "allowed",
+          "get_contract_status": "allowed"
+        },
+        "session": {
+          "register_session": "allowed",
+          "end_session": "allowed",
+          "get_session_status": "allowed",
+          "check_interviewer_authority": "allowed"
+        }
+      }
+    },
+    "brainxio-claude-hiring": {
+      "tools": {
+        "participant": {
+          "enroll": "allowed",
+          "get_portfolio": "allowed",
+          "list_skills": "allowed",
+          "get_skill_definition": "allowed",
+          "submit_proof": "allowed",
+          "request_meeting": "allowed",
+          "cancel_meeting_tool": "allowed",
+          "list_my_meetings": "allowed"
+        },
+        "interviewer": {
+          "signin": "allowed",
+          "assess_candidate": "allowed",
+          "draft_contract": "allowed",
+          "list_contracts": "allowed",
+          "accept_meeting_tool": "allowed",
+          "decline_meeting_tool": "allowed"
+        },
+        "session": {
+          "get_session_status": "allowed",
+          "end_session": "allowed"
+        }
+      }
+    },
+    "brainxio-claude-meetings": {
+      "tools": {
+        "key_management": {
+          "get_my_pubkey": "allowed",
+          "authorize_peer_tool": "allowed",
+          "list_peers": "allowed",
+          "revoke_peer_tool": "allowed",
+          "rotate_keys": "allowed"
+        },
+        "meeting_registration": {
+          "schedule_meeting": "allowed",
+          "generate_invite_token": "allowed",
+          "join_meeting": "allowed",
+          "leave_meeting": "allowed",
+          "list_my_meetings": "allowed",
+          "revoke_invite": "allowed"
+        },
+        "meeting_execution": {
+          "start_meeting_tool": "allowed",
+          "advance_round_tool": "allowed",
+          "close_meeting_tool": "allowed",
+          "get_meeting_status": "allowed"
+        },
+        "role_submissions": {
+          "submit_architect_position": "allowed",
+          "submit_critic_concerns": "allowed",
+          "submit_stakeholder_position": "allowed",
+          "record_decision": "allowed",
+          "log_risk": "allowed"
+        },
+        "artifacts": {
+          "generate_artifacts": "allowed",
+          "list_meeting_types": "allowed",
+          "get_meeting_strategy": "allowed",
+          "list_meeting_roles": "allowed",
+          "get_role_definition": "allowed"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "mcp": {
+    "brainxio-claude-hiring": {
+      "tools": {
+        "participant": {
+          "enroll": "allowed",
+          "get_portfolio": "allowed",
+          "list_skills": "allowed",
+          "get_skill_definition": "allowed",
+          "submit_proof": "allowed",
+          "request_meeting": "allowed",
+          "cancel_meeting_tool": "allowed",
+          "list_my_meetings": "allowed"
+        },
+        "interviewer": {
+          "signin": "allowed",
+          "assess_candidate": "allowed",
+          "draft_contract": "allowed",
+          "list_contracts": "allowed",
+          "accept_meeting_tool": "allowed",
+          "decline_meeting_tool": "allowed"
+        },
+        "session": {
+          "get_session_status": "allowed",
+          "end_session": "allowed"
+        }
+      }
+    }
+  }
+}

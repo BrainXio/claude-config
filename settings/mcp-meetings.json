@@ -1,0 +1,43 @@
+{
+  "mcp": {
+    "brainxio-claude-meetings": {
+      "tools": {
+        "key_management": {
+          "get_my_pubkey": "allowed",
+          "authorize_peer_tool": "allowed",
+          "list_peers": "allowed",
+          "revoke_peer_tool": "allowed",
+          "rotate_keys": "allowed"
+        },
+        "meeting_registration": {
+          "schedule_meeting": "allowed",
+          "generate_invite_token": "allowed",
+          "join_meeting": "allowed",
+          "leave_meeting": "allowed",
+          "list_my_meetings": "allowed",
+          "revoke_invite": "allowed"
+        },
+        "meeting_execution": {
+          "start_meeting_tool": "allowed",
+          "advance_round_tool": "allowed",
+          "close_meeting_tool": "allowed",
+          "get_meeting_status": "allowed"
+        },
+        "role_submissions": {
+          "submit_architect_position": "allowed",
+          "submit_critic_concerns": "allowed",
+          "submit_stakeholder_position": "allowed",
+          "record_decision": "allowed",
+          "log_risk": "allowed"
+        },
+        "artifacts": {
+          "generate_artifacts": "allowed",
+          "list_meeting_types": "allowed",
+          "get_meeting_strategy": "allowed",
+          "list_meeting_roles": "allowed",
+          "get_role_definition": "allowed"
+        }
+      }
+    }
+  }
+}
