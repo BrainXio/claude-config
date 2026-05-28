@@ -57,6 +57,18 @@
           }
         ]
       }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uvx --from git+https://github.com/BrainXio/claude-cli@v0.1.0 claude-post-tool-use",
+            "timeout": 10
+          }
+        ]
+      }
     ]
   }
 }

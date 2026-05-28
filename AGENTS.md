@@ -131,6 +131,23 @@ Required commands (defined in `claude-cli`'s `pyproject.toml`):
 | `claude-session-end`        | SessionEnd   | Flush transcript to daily log  |
 | `claude-standards-guard`    | PreToolUse   | Validate Edit/Write calls      |
 
+### Step 5b: Running Tools from Submodules
+
+When running tools from `packages/` or `projects/` subdirectories, use `uv --directory` to avoid working directory drift:
+
+```bash
+# From workspace root — run claude-cli tools
+uv --directory packages/brainxio-claude-cli run claude-bus read
+uv --directory packages/brainxio-claude-cli run claude-bus write '{"content":"msg","from":"x","to":"all","type":"status"}'
+uv --directory packages/brainxio-claude-cli run claude-commit -m "feat: add feature"
+
+# From workspace root — run agents-core tools
+uv --directory projects/agents-core run brainxio-bus stats
+uv --directory projects/agents-core run pytest
+```
+
+**Why:** `uv --directory <path>` resolves `pyproject.toml` from the specified directory, avoiding `cd` drift between Bash calls. Alternative: `cd <path> && uv run <command>` but requires shell state persistence.
+
 ### Step 6: Git hooks
 
 The `.githooks/` directory contains lightweight, generic hooks:
